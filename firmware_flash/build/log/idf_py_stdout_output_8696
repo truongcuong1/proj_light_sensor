@@ -1,0 +1,1438 @@
+Command: C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe c:\Espressif\frameworks\esp-idf-v5.5.1\v5.5.1\esp-idf\tools/idf_monitor.py -p COM5 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 C:\Users\DELL\new_project_light_wifi\firmware_flash\build\light_wifi_sensor.elf C:\Users\DELL\new_project_light_wifi\firmware_flash\build\bootloader\bootloader.elf --force-color -m 'C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'c:\Espressif\frameworks\esp-idf-v5.5.1\v5.5.1\esp-idf\tools\idf.py' '-p' 'COM5'
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15916
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF HEAD-HASH-NOTFOUND 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Nov 21 2025 23:25:43[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (32) boot: chip revision: v3.1[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (38) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (50) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (72) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (82) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=2115ch (135516) map[0m
+[0;32mI (135) esp_image: segment 1: paddr=00031184 vaddr=3ffb0000 size=03f6ch ( 16236) load[0m
+[0;32mI (142) esp_image: segment 2: paddr=000350f8 vaddr=40080000 size=0af20h ( 44832) load[0m
+[0;32mI (159) esp_image: segment 3: paddr=00040020 vaddr=400d0020 size=a6318h (680728) map[0m
+[0;32mI (392) esp_image: segment 4: paddr=000e6340 vaddr=4008af20 size=0f898h ( 63640) load[0m
+[0;32mI (417) esp_image: segment 5: paddr=000f5be0 vaddr=50000000 size=00098h (   152) load[0m
+[0;32mI (430) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (430) boot: Disabling RNG early entropy source...[0m
+[0;32mI (441) cpu_start: Multicore app[0m
+[0;32mI (449) cpu_start: Pro cpu start user code[0m
+[0;32mI (449) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (449) app_init: Application information:[0m
+[0;32mI (449) app_init: Project name:     light_wifi_sensor[0m
+[0;32mI (454) app_init: App version:      1[0m
+[0;32mI (458) app_init: Compile time:     Nov 21 2025 23:24:48[0m
+[0;32mI (463) app_init: ELF file SHA256:  cf5970d08...[0m
+[0;32mI (467) app_init: ESP-IDF:          HEAD-HASH-NOTFOUND[0m
+[0;32mI (472) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (476) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (480) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (484) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (490) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (495) heap_init: At 3FFB8750 len 000278B0 (158 KiB): DRAM[0m
+[0;32mI (500) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (505) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (511) heap_init: At 4009A7B8 len 00005848 (22 KiB): IRAM[0m
+[0;32mI (518) spi_flash: detected chip: generic[0m
+[0;32mI (520) spi_flash: flash io: dio[0m
+[0;33mW (523) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (535) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (546) main_task: Started on CPU0[0m
+[0;32mI (556) main_task: Calling app_main()[0m
+[0;32mI (576) MAIN_APP: Server URL: http://192.168.1.10:8000/api/sensor[0m
+[0;33mW (576) MAIN_APP: Chua co cau hinh WiFi -> Bat che do AP...[0m
+[0;32mI (586) wifi:wifi driver task: 3ffc0f10, prio:23, stack:6656, core=0[0m
+[0;32mI (586) wifi:wifi firmware version: 14da9b7[0m
+[0;32mI (586) wifi:wifi certification version: v7.0[0m
+[0;32mI (586) wifi:config NVS flash: enabled[0m
+[0;32mI (596) wifi:config nano formatting: disabled[0m
+[0;32mI (596) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (596) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (606) wifi:Init management short buffer num: 32[0m
+[0;32mI (606) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (616) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (616) wifi:Init static rx buffer num: 10[0m
+[0;32mI (616) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (626) wifi_init: rx ba win: 6[0m
+[0;32mI (626) wifi_init: accept mbox: 6[0m
+[0;32mI (626) wifi_init: tcpip mbox: 32[0m
+[0;32mI (636) wifi_init: udp mbox: 6[0m
+[0;32mI (636) wifi_init: tcp mbox: 6[0m
+[0;32mI (636) wifi_init: tcp tx win: 5760[0m
+[0;32mI (646) wifi_init: tcp rx win: 5760[0m
+[0;32mI (646) wifi_init: tcp mss: 1440[0m
+[0;32mI (646) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (656) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (916) phy_init: phy_version 4861,b71b5ad,Aug  5 2025,11:16:06[0m
+[0;33mW (916) phy_init: failed to load RF calibration data (0x1102), falling back to full calibration[0m
+[0;32mI (986) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(2)[0m
+[0;32mI (996) wifi:mode : softAP (80:f3:da:50:bb:5d)[0m
+[0;32mI (996) wifi:Total power save buffer number: 16[0m
+[0;32mI (996) wifi:Init max length of beacon: 752/752[0m
+[0;32mI (1006) wifi:Init max length of beacon: 752/752[0m
+[0;32mI (1006) WIFI_PROV: AP Started: ESP_Config[0m
+[0;32mI (1006) esp_netif_lwip: DHCP server started on interface WIFI_AP_DEF with IP: 192.168.4.1[0m
+[0;32mI (1016) main_task: Returned from app_main()[0m
+[0;32mI (91786) wifi:new:<1,1>, old:<1,1>, ap:<1,1>, sta:<255,255>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (91786) wifi:station: 48:51:b7:21:4d:b4 join, AID=1, bgn, 40U[0m
+[0;32mI (92006) esp_netif_lwip: DHCP server assigned IP to a client, IP is: 192.168.4.2[0m
+[0;32mI (92796) wifi:<ba-add>idx:2 (ifx:1, 48:51:b7:21:4d:b4), tid:0, ssn:52, winSize:64[0m
+[0;33mW (124156) httpd_uri: httpd_uri: URI '/favicon.ico' not found[0m
+[0;33mW (124156) httpd_txrx: httpd_resp_send_err: 404 Not Found - Nothing matches the given URI[0m
+[0;32mI (161896) wifi:station: 48:51:b7:21:4d:b4 leave, AID = 1, reason = 2, bss_flags is 756835, bss:0x3ffb9b04[0m
+[0;32mI (161896) wifi:new:<1,0>, old:<1,1>, ap:<1,1>, sta:<255,255>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (161896) wifi:<ba-del>idx:2, tid:0[0m
+[0;32mI (161906) wifi:new:<1,1>, old:<1,0>, ap:<1,1>, sta:<255,255>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (161986) wifi:flush txq[0m
+[0;32mI (161986) wifi:stop sw txq[0m
+[0;32mI (161986) wifi:lmac stop hw txq[0m
+ets Jul 29 2019 12:21:46
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15916
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF HEAD-HASH-NOTFOUND 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Nov 21 2025 23:25:43[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (32) boot: chip revision: v3.1[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (38) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (50) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (72) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (82) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=2115ch (135516) map[0m
+[0;32mI (135) esp_image: segment 1: paddr=00031184 vaddr=3ffb0000 size=03f6ch ( 16236) load[0m
+[0;32mI (141) esp_image: segment 2: paddr=000350f8 vaddr=40080000 size=0af20h ( 44832) load[0m
+[0;32mI (159) esp_image: segment 3: paddr=00040020 vaddr=400d0020 size=a6318h (680728) map[0m
+[0;32mI (392) esp_image: segment 4: paddr=000e6340 vaddr=4008af20 size=0f898h ( 63640) load[0m
+[0;32mI (417) esp_image: segment 5: paddr=000f5be0 vaddr=50000000 size=00098h (   152) load[0m
+[0;32mI (430) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (430) boot: Disabling RNG early entropy source...[0m
+[0;32mI (441) cpu_start: Multicore app[0m
+[0;32mI (449) cpu_start: Pro cpu start user code[0m
+[0;32mI (449) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (449) app_init: Application information:[0m
+[0;32mI (449) app_init: Project name:     light_wifi_sensor[0m
+[0;32mI (454) app_init: App version:      1[0m
+[0;32mI (457) app_init: Compile time:     Nov 21 2025 23:24:48[0m
+[0;32mI (462) app_init: ELF file SHA256:  cf5970d08...[0m
+[0;32mI (467) app_init: ESP-IDF:          HEAD-HASH-NOTFOUND[0m
+[0;32mI (471) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (475) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (479) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (483) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (490) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (494) heap_init: At 3FFB8750 len 000278B0 (158 KiB): DRAM[0m
+[0;32mI (500) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (505) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (511) heap_init: At 4009A7B8 len 00005848 (22 KiB): IRAM[0m
+[0;32mI (517) spi_flash: detected chip: generic[0m
+[0;32mI (520) spi_flash: flash io: dio[0m
+[0;33mW (523) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (535) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (545) main_task: Started on CPU0[0m
+[0;32mI (555) main_task: Calling app_main()[0m
+[0;32mI (585) MAIN_APP: Server URL: http://192.168.1.10:8000/api/sensor[0m
+[0;32mI (585) WIFI_PROV: Tim thay WiFi: AC. Dang ket noi...[0m
+[0;32mI (595) wifi:wifi driver task: 3ffc0fa0, prio:23, stack:6656, core=0[0m
+[0;32mI (605) wifi:wifi firmware version: 14da9b7[0m
+[0;32mI (605) wifi:wifi certification version: v7.0[0m
+[0;32mI (605) wifi:config NVS flash: enabled[0m
+[0;32mI (605) wifi:config nano formatting: disabled[0m
+[0;32mI (605) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (615) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (615) wifi:Init management short buffer num: 32[0m
+[0;32mI (615) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (625) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (625) wifi:Init static rx buffer num: 10[0m
+[0;32mI (635) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (635) wifi_init: rx ba win: 6[0m
+[0;32mI (635) wifi_init: accept mbox: 6[0m
+[0;32mI (645) wifi_init: tcpip mbox: 32[0m
+[0;32mI (645) wifi_init: udp mbox: 6[0m
+[0;32mI (645) wifi_init: tcp mbox: 6[0m
+[0;32mI (645) wifi_init: tcp tx win: 5760[0m
+[0;32mI (655) wifi_init: tcp rx win: 5760[0m
+[0;32mI (655) wifi_init: tcp mss: 1440[0m
+[0;32mI (655) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (665) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (665) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (705) phy_init: phy_version 4861,b71b5ad,Aug  5 2025,11:16:06[0m
+[0;32mI (775) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)[0m
+[0;32mI (795) wifi:mode : sta (80:f3:da:50:bb:5c)[0m
+[0;32mI (795) wifi:enable tsf[0m
+[0;32mI (795) MAIN_APP: Da co cau hinh -> Chay Sensor Task...[0m
+[0;32mI (805) BH1750: BH1750 initialized[0m
+[0;32mI (805) main_task: Returned from app_main()[0m
+[0;32mI (805) MAIN_APP: Do duoc: 0.00 Lux[0m
+[0;33mW (805) MAIN_APP: Mat ket noi WiFi! (Lan 1/5)[0m
+[0;32mI (2845) wifi:new:<13,0>, old:<1,0>, ap:<255,255>, sta:<13,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (2845) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (2855) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (2865) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (2895) wifi:connected with AC, aid = 1, channel 13, BW20, bssid = 2a:50:93:31:76:3f[0m
+[0;32mI (2895) wifi:security: WPA2-PSK, phy: bgn, rssi: -15[0m
+[0;32mI (2925) wifi:pm start, type: 1[0m
+
+[0;32mI (2925) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (2985) wifi:dp: 2, bi: 102400, li: 4, scale listen interval from 307200 us to 409600 us[0m
+[0;32mI (2985) wifi:AP's beacon interval = 102400 us, DTIM period = 2[0m
+[0;32mI (3955) esp_netif_handlers: sta ip: 10.75.37.180, mask: 255.255.255.0, gw: 10.75.37.153[0m
+[0;32mI (3955) WIFI_PROV: Da co IP: 10.75.37.180[0m
+[0;32mI (10815) MAIN_APP: Do duoc: 28.33 Lux[0m
+[1;31mE (15825) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (15825) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (15825) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (15825) MAIN_APP: Loi HTTP POST: ESP_ERR_HTTP_CONNECT[0m
+[0;32mI (25835) MAIN_APP: Do duoc: 26.67 Lux[0m
+[1;31mE (30845) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (30845) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (30845) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (30845) MAIN_APP: Loi HTTP POST: ESP_ERR_HTTP_CONNECT[0m
+[0;32mI (40855) MAIN_APP: Do duoc: 26.67 Lux[0m
+[1;31mE (45865) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (45865) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (45865) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (45865) MAIN_APP: Loi HTTP POST: ESP_ERR_HTTP_CONNECT[0m
+[0;32mI (55875) MAIN_APP: Do duoc: 25.83 Lux[0m
+[1;31mE (60885) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (60885) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (60885) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (60885) MAIN_APP: Loi HTTP POST: ESP_ERR_HTTP_CONNECT[0m
+[0;32mI (70895) MAIN_APP: Do duoc: 25.83 Lux[0m
+[1;31mE (75905) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (75905) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (75905) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (75905) MAIN_APP: Loi HTTP POST: ESP_ERR_HTTP_CONNECT[0m
+[0;32mI (85915) MAIN_APP: Do duoc: 25.83 Lux[0m
+[1;31mE (90925) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (90925) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (90925) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (90925) MAIN_APP: Loi HTTP POST: ESP_ERR_HTTP_CONNECT[0m
+[0;32mI (100935) MAIN_APP: Do duoc: 25.83 Lux[0m
+[1;31mE (105945) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (105945) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (105945) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (105945) MAIN_APP: Loi HTTP POST: ESP_ERR_HTTP_CONNECT[0m
+[0;32mI (115955) MAIN_APP: Do duoc: 25.83 Lux[0m
+[1;31mE (120965) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (120965) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (120965) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (120965) MAIN_APP: Loi HTTP POST: ESP_ERR_HTTP_CONNECT[0m
+[0;32mI (130975) MAIN_APP: Do duoc: 25.83 Lux[0m
+[1;31mE (135985) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (135985) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (135985) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (135985) MAIN_APP: Loi HTTP POST: ESP_ERR_HTTP_CONNECT[0m
+[0;32mI (145995) MAIN_APP: Do duoc: 25.83 Lux[0m
+[1;31mE (151005) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (151005) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (151005) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (151005) MAIN_APP: Loi HTTP POST: ESP_ERR_HTTP_CONNECT[0m
+[0;32mI (161015) MAIN_APP: Do duoc: 25.83 Lux[0m
+[1;31mE (166025) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (166025) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (166025) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (166025) MAIN_APP: Loi HTTP POST: ESP_ERR_HTTP_CONNECT[0m
+[0;32mI (176035) MAIN_APP: Do duoc: 25.83 Lux[0m
+[1;31mE (181045) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (181045) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (181045) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (181045) MAIN_APP: Loi HTTP POST: ESP_ERR_HTTP_CONNECT[0m
+[0;32mI (191045) MAIN_APP: Do duoc: 25.83 Lux[0m
+[1;31mE (196055) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (196055) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (196055) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (196055) MAIN_APP: Loi HTTP POST: ESP_ERR_HTTP_CONNECT[0m
+[0;32mI (206065) MAIN_APP: Do duoc: 25.83 Lux[0m
+[1;31mE (211075) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (211075) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (211075) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (211075) MAIN_APP: Loi HTTP POST: ESP_ERR_HTTP_CONNECT[0m
+[0;32mI (221085) MAIN_APP: Do duoc: 31.67 Lux[0m
+[1;31mE (226095) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (226095) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (226095) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (226095) MAIN_APP: Loi HTTP POST: ESP_ERR_HTTP_CONNECT[0m
+[0;32mI (236105) MAIN_APP: Do duoc: 45.83 Lux[0m
+[1;31mE (241115) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (241115) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (241115) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (241115) MAIN_APP: Loi HTTP POST: ESP_ERR_HTTP_CONNECT[0m
+[0;32mI (251125) MAIN_APP: Do duoc: 45.83 Lux[0m
+[1;31mE (256135) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (256135) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (256135) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (256135) MAIN_APP: Loi HTTP POST: ESP_ERR_HTTP_CONNECT[0m
+[0;32mI (266145) MAIN_APP: Do duoc: 45.00 Lux[0m
+[1;31mE (271155) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (271155) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (271155) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (271155) MAIN_APP: Loi HTTP POST: ESP_ERR_HTTP_CONNECT[0m
+[0;32mI (281165) MAIN_APP: Do duoc: 45.00 Lux[0m
+[1;31mE (286175) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (286175) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (286175) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (286175) MAIN_APP: Loi HTTP POST: ESP_ERR_HTTP_CONNECT[0m
+[0;32mI (296185) MAIN_APP: Do duoc: 45.00 Lux[0m
+[1;31mE (301195) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (301195) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (301195) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (301195) MAIN_APP: Loi HTTP POST: ESP_ERR_HTTP_CONNECT[0m
+[0;32mI (311205) MAIN_APP: Do duoc: 45.00 Lux[0m
+[1;31mE (316215) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (316215) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (316215) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (316215) MAIN_APP: Loi HTTP POST: ESP_ERR_HTTP_CONNECT[0m
+[0;32mI (326225) MAIN_APP: Do duoc: 45.00 Lux[0m
+[1;31mE (331235) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (331235) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (331235) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (331235) MAIN_APP: Loi HTTP POST: ESP_ERR_HTTP_CONNECT[0m
+[0;32mI (341245) MAIN_APP: Do duoc: 48.33 Lux[0m
+[1;31mE (346255) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (346255) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (346255) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (346255) MAIN_APP: Loi HTTP POST: ESP_ERR_HTTP_CONNECT[0m
+[0;32mI (356265) MAIN_APP: Do duoc: 48.33 Lux[0m
+[1;31mE (361275) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (361275) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (361275) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (361275) MAIN_APP: Loi HTTP POST: ESP_ERR_HTTP_CONNECT[0m
+[0;32mI (371285) MAIN_APP: Do duoc: 48.33 Lux[0m
+[1;31mE (376295) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (376295) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (376295) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (376295) MAIN_APP: Loi HTTP POST: ESP_ERR_HTTP_CONNECT[0m
+[0;32mI (386305) MAIN_APP: Do duoc: 45.00 Lux[0m
+[1;31mE (391315) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (391315) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (391315) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (391315) MAIN_APP: Loi HTTP POST: ESP_ERR_HTTP_CONNECT[0m
+[0;32mI (401325) MAIN_APP: Do duoc: 45.00 Lux[0m
+[1;31mE (406335) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (406335) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (406335) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (406335) MAIN_APP: Loi HTTP POST: ESP_ERR_HTTP_CONNECT[0m
+[0;32mI (416345) MAIN_APP: Do duoc: 44.17 Lux[0m
+[1;31mE (421355) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (421355) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (421355) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (421355) MAIN_APP: Loi HTTP POST: ESP_ERR_HTTP_CONNECT[0m
+[0;32mI (431365) MAIN_APP: Do duoc: 44.17 Lux[0m
+[0;32mI (431735) wifi:state: run -> init (0x1c0)[0m
+[0;32mI (431745) wifi:pm stop, total sleep time: 408587127 us / 428819465 us[0m
+
+[0;32mI (431745) wifi:new:<13,0>, old:<13,0>, ap:<255,255>, sta:<13,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;33mW (431745) WIFI_PROV: Mat ket noi WiFi, thu lai...[0m
+[1;31mE (431745) esp-tls: [sock=54] delayed connect error: Software caused connection abort[0m
+[1;31mE (431755) transport_base: Failed to open a new connection: 32772[0m
+[1;31mE (431765) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (431765) MAIN_APP: Loi HTTP POST: ESP_ERR_HTTP_CONNECT[0m
+[0;33mW (434165) WIFI_PROV: Mat ket noi WiFi, thu lai...[0m
+[0;33mW (436575) WIFI_PROV: Mat ket noi WiFi, thu lai...[0m
+[0;33mW (438995) WIFI_PROV: Mat ket noi WiFi, thu lai...[0m
+[0;33mW (441405) WIFI_PROV: Mat ket noi WiFi, thu lai...[0m
+[0;32mI (441775) MAIN_APP: Do duoc: 44.17 Lux[0m
+[0;33mW (441775) MAIN_APP: Mat ket noi WiFi! (Lan 1/5)[0m
+[0;33mW (443825) WIFI_PROV: Mat ket noi WiFi, thu lai...[0m
+[0;33mW (446235) WIFI_PROV: Mat ket noi WiFi, thu lai...[0m
+[0;33mW (448655) WIFI_PROV: Mat ket noi WiFi, thu lai...[0m
+[0;33mW (451065) WIFI_PROV: Mat ket noi WiFi, thu lai...[0m
+[0;32mI (451775) MAIN_APP: Do duoc: 44.17 Lux[0m
+[0;33mW (451775) MAIN_APP: Mat ket noi WiFi! (Lan 2/5)[0m
+[0;33mW (453485) WIFI_PROV: Mat ket noi WiFi, thu lai...[0m
+[0;33mW (455895) WIFI_PROV: Mat ket noi WiFi, thu lai...[0m
+[0;33mW (458315) WIFI_PROV: Mat ket noi WiFi, thu lai...[0m
+[0;33mW (460725) WIFI_PROV: Mat ket noi WiFi, thu lai...[0m
+[0;32mI (461775) MAIN_APP: Do duoc: 44.17 Lux[0m
+[0;33mW (461775) MAIN_APP: Mat ket noi WiFi! (Lan 3/5)[0m
+[0;33mW (463145) WIFI_PROV: Mat ket noi WiFi, thu lai...[0m
+[0;33mW (465555) WIFI_PROV: Mat ket noi WiFi, thu lai...[0m
+[0;33mW (467975) WIFI_PROV: Mat ket noi WiFi, thu lai...[0m
+[0;33mW (470385) WIFI_PROV: Mat ket noi WiFi, thu lai...[0m
+[0;32mI (471775) MAIN_APP: Do duoc: 44.17 Lux[0m
+[0;33mW (471775) MAIN_APP: Mat ket noi WiFi! (Lan 4/5)[0m
+[0;33mW (472805) WIFI_PROV: Mat ket noi WiFi, thu lai...[0m
+[0;33mW (475215) WIFI_PROV: Mat ket noi WiFi, thu lai...[0m
+[0;33mW (477635) WIFI_PROV: Mat ket noi WiFi, thu lai...[0m
+[0;33mW (480045) WIFI_PROV: Mat ket noi WiFi, thu lai...[0m
+[0;32mI (481775) MAIN_APP: Do duoc: 45.00 Lux[0m
+[0;33mW (481775) MAIN_APP: Mat ket noi WiFi! (Lan 5/5)[0m
+[1;31mE (481775) MAIN_APP: Mat ket noi qua lau! Di ngu 60 giay de tiet kiem dien...[0m
+[0;33mW (482465) WIFI_PROV: Mat ket noi WiFi, thu lai...[0m
+ets Jul 29 2019 12:21:46
+
+rst:0x5 (DEEPSLEEP_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15916
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF HEAD-HASH-NOTFOUND 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Nov 21 2025 23:25:43[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (32) boot: chip revision: v3.1[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (38) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (50) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (72) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (82) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=2115ch (135516) map[0m
+[0;32mI (136) esp_image: segment 1: paddr=00031184 vaddr=3ffb0000 size=03f6ch ( 16236) load[0m
+[0;32mI (142) esp_image: segment 2: paddr=000350f8 vaddr=40080000 size=0af20h ( 44832) load[0m
+[0;32mI (159) esp_image: segment 3: paddr=00040020 vaddr=400d0020 size=a6318h (680728) map[0m
+[0;32mI (392) esp_image: segment 4: paddr=000e6340 vaddr=4008af20 size=0f898h ( 63640) load[0m
+[0;32mI (417) esp_image: segment 5: paddr=000f5be0 vaddr=50000000 size=00098h (   152) [0m
+[0;32mI (430) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (430) boot: Disabling RNG early entropy source...[0m
+[0;32mI (441) cpu_start: Multicore app[0m
+[0;32mI (449) cpu_start: Pro cpu start user code[0m
+[0;32mI (449) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (449) app_init: Application information:[0m
+[0;32mI (450) app_init: Project name:     light_wifi_sensor[0m
+[0;32mI (454) app_init: App version:      1[0m
+[0;32mI (458) app_init: Compile time:     Nov 21 2025 23:24:48[0m
+[0;32mI (463) app_init: ELF file SHA256:  cf5970d08...[0m
+[0;32mI (467) app_init: ESP-IDF:          HEAD-HASH-NOTFOUND[0m
+[0;32mI (472) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (476) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (480) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (484) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (490) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (495) heap_init: At 3FFB8750 len 000278B0 (158 KiB): DRAM[0m
+[0;32mI (500) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (506) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (511) heap_init: At 4009A7B8 len 00005848 (22 KiB): IRAM[0m
+[0;32mI (518) spi_flash: detected chip: generic[0m
+[0;32mI (520) spi_flash: flash io: dio[0m
+[0;33mW (523) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (535) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (546) main_task: Started on CPU0[0m
+[0;32mI (556) main_task: Calling app_main()[0m
+[0;32mI (586) MAIN_APP: Server URL: http://192.168.1.10:8000/api/sensor[0m
+[0;32mI (596) WIFI_PROV: Tim thay WiFi: AC. Dang ket noi...[0m
+[0;32mI (606) wifi:wifi driver task: 3ffc10a8, prio:23, stack:6656, core=0[0m
+[0;32mI (616) wifi:wifi firmware version: 14da9b7[0m
+[0;32mI (626) wifi:wifi certification version: v7.0[0m
+[0;32mI (626) wifi:config NVS flash: enabled[0m
+[0;32mI (626) wifi:config nano formatting: disabled[0m
+[0;32mI (626) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (626) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (636) wifi:Init management short buffer num: 32[0m
+[0;32mI (636) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (646) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (646) wifi:Init static rx buffer num: 10[0m
+[0;32mI (646) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (656) wifi_init: rx ba win: 6[0m
+[0;32mI (656) wifi_init: accept mbox: 6[0m
+[0;32mI (656) wifi_init: tcpip mbox: 32[0m
+[0;32mI (666) wifi_init: udp mbox: 6[0m
+[0;32mI (666) wifi_init: tcp mbox: 6[0m
+[0;32mI (666) wifi_init: tcp tx win: 5760[0m
+[0;32mI (676) wifi_init: tcp rx win: 5760[0m
+[0;32mI (676) wifi_init: tcp mss: 1440[0m
+[0;32mI (676) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (686) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (686) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (696) phy_init: phy_version 4861,b71b5ad,Aug  5 2025,11:16:06[0m
+[0;32mI (716) wifi:mode : sta (80:f3:da:50:bb:5c)[0m
+[0;32mI (716) wifi:enable tsf[0m
+[0;32mI (716) MAIN_APP: Da co cau hinh -> Chay Sensor Task...[0m
+[0;32mI (716) BH1750: BH1750 initialized[0m
+[0;32mI (726) main_task: Returned from app_main()[0m
+[0;32mI (726) MAIN_APP: Do duoc: 0.00 Lux[0m
+[0;33mW (726) MAIN_APP: Mat ket noi WiFi! (Lan 1/5)[0m
+[0;33mW (3136) WIFI_PROV: Mat ket noi WiFi, thu lai...[0m
+[0;33mW (5546) WIFI_PROV: Mat ket noi WiFi, thu lai...[0m
+[0;33mW (7966) WIFI_PROV: Mat ket noi WiFi, thu lai...[0m
+[0;33mW (10376) WIFI_PROV: Mat ket noi WiFi, thu lai...[0m
+[0;32mI (10726) MAIN_APP: Do duoc: 6.67 Lux[0m
+[0;33mW (10726) MAIN_APP: Mat ket noi WiFi! (Lan 2/5)[0m
+[0;33mW (12796) WIFI_PROV: Mat ket noi WiFi, thu lai...[0m
+[0;33mW (15206) WIFI_PROV: Mat ket noi WiFi, thu lai...[0m
+[0;33mW (17626) WIFI_PROV: Mat ket noi WiFi, thu lai...[0m
+[0;33mW (20036) WIFI_PROV: Mat ket noi WiFi, thu lai...[0m
+[0;32mI (20726) MAIN_APP: Do duoc: 6.67 Lux[0m
+[0;33mW (20726) MAIN_APP: Mat ket noi WiFi! (Lan 3/5)[0m
+[0;33mW (22456) WIFI_PROV: Mat ket noi WiFi, thu lai...[0m
+[0;33mW (24866) WIFI_PROV: Mat ket noi WiFi, thu lai...[0m
+[0;33mW (27286) WIFI_PROV: Mat ket noi WiFi, thu lai...[0m
+[0;33mW (29696) WIFI_PROV: Mat ket noi WiFi, thu lai...[0m
+[0;32mI (30726) MAIN_APP: Do duoc: 6.67 Lux[0m
+[0;33mW (30726) MAIN_APP: Mat ket noi WiFi! (Lan 4/5)[0m
+[0;33mW (32116) WIFI_PROV: Mat ket noi WiFi, thu lai...[0m
+[0;33mW (34526) WIFI_PROV: Mat ket noi WiFi, thu lai...[0m
+[0;33mW (36946) WIFI_PROV: Mat ket noi WiFi, thu lai...[0m
+[0;33mW (39356) WIFI_PROV: Mat ket noi WiFi, thu lai...[0m
+[0;32mI (40726) MAIN_APP: Do duoc: 6.67 Lux[0m
+[0;33mW (40726) MAIN_APP: Mat ket noi WiFi! (Lan 5/5)[0m
+[1;31mE (40726) MAIN_APP: Mat ket noi qua lau! Di ngu 60 giay de tiet kiem dien...[0m
+[0;33mW (41776) WIFI_PROV: Mat ket noi WiFi, thu lai...[0m
+ets Jul 29 2019 12:21:46
+
+rst:0x5 (DEEPSLEEP_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15916
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF HEAD-HASH-NOTFOUND 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Nov 21 2025 23:25:43[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (32) boot: chip revision: v3.1[0m
+[0;32mI (35) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (38) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (50) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (72) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (82) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=2115ch (135516) map[0m
+[0;32mI (136) esp_image: segment 1: paddr=00031184 vaddr=3ffb0000 size=03f6ch ( 16236) load[0m
+[0;32mI (142) esp_image: segment 2: paddr=000350f8 vaddr=40080000 size=0af20h ( 44832) load[0m
+[0;32mI (159) esp_image: segment 3: paddr=00040020 vaddr=400d0020 size=a6318h (680728) map[0m
+[0;32mI (392) esp_image: segment 4: paddr=000e6340 vaddr=4008af20 size=0f898h ( 63640) load[0m
+[0;32mI (417) esp_image: segment 5: paddr=000f5be0 vaddr=50000000 size=00098h (   152) [0m
+[0;32mI (430) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (430) boot: Disabling RNG early entropy source...[0m
+[0;32mI (441) cpu_start: Multicore app[0m
+[0;32mI (449) cpu_start: Pro cpu start user code[0m
+[0;32mI (449) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (449) app_init: Application information:[0m
+[0;32mI (450) app_init: Project name:     light_wifi_sensor[0m
+[0;32mI (454) app_init: App version:      1[0m
+[0;32mI (458) app_init: Compile time:     Nov 21 2025 23:24:48[0m
+[0;32mI (463) app_init: ELF file SHA256:  cf5970d08...[0m
+[0;32mI (467) app_init: ESP-IDF:          HEAD-HASH-NOTFOUND[0m
+[0;32mI (472) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (476) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (480) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (484) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (490) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (495) heap_init: At 3FFB8750 len 000278B0 (158 KiB): DRAM[0m
+[0;32mI (500) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (506) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (511) heap_init: At 4009A7B8 len 00005848 (22 KiB): IRAM[0m
+[0;32mI (518) spi_flash: detected chip: generic[0m
+[0;32mI (520) spi_flash: flash io: dio[0m
+[0;33mW (523) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (535) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (546) main_task: Started on CPU0[0m
+[0;32mI (556) main_task: Calling app_main()[0m
+[0;32mI (586) MAIN_APP: Server URL: http://192.168.1.10:8000/api/sensor[0m
+[0;32mI (596) WIFI_PROV: Tim thay WiFi: AC. Dang ket noi...[0m
+[0;32mI (606) wifi:wifi driver task: 3ffc10a8, prio:23, stack:6656, core=0[0m
+[0;32mI (616) wifi:wifi firmware version: 14da9b7[0m
+[0;32mI (626) wifi:wifi certification version: v7.0[0m
+[0;32mI (626) wifi:config NVS flash: enabled[0m
+[0;32mI (626) wifi:config nano formatting: disabled[0m
+[0;32mI (626) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (626) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (636) wifi:Init management short buffer num: 32[0m
+[0;32mI (636) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (646) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (646) wifi:Init static rx buffer num: 10[0m
+[0;32mI (646) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (656) wifi_init: rx ba win: 6[0m
+[0;32mI (656) wifi_init: accept mbox: 6[0m
+[0;32mI (656) wifi_init: tcpip mbox: 32[0m
+[0;32mI (666) wifi_init: udp mbox: 6[0m
+[0;32mI (666) wifi_init: tcp mbox: 6[0m
+[0;32mI (666) wifi_init: tcp tx win: 5760[0m
+[0;32mI (676) wifi_init: tcp rx win: 5760[0m
+[0;32mI (676) wifi_init: tcp mss: 1440[0m
+[0;32mI (676) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (686) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (686) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (696) phy_init: phy_version 4861,b71b5ad,Aug  5 2025,11:16:06[0m
+[0;32mI (716) wifi:mode : sta (80:f3:da:50:bb:5c)[0m
+[0;32mI (716) wifi:enable tsf[0m
+[0;32mI (716) MAIN_APP: Da co cau hinh -> Chay Sensor Task...[0m
+[0;32mI (716) BH1750: BH1750 initialized[0m
+[0;32mI (726) main_task: Returned from app_main()[0m
+[0;32mI (726) MAIN_APP: Do duoc: 0.00 Lux[0m
+[0;33mW (726) MAIN_APP: Mat ket noi WiFi! (Lan 1/5)[0m
+[0;33mW (3136) WIFI_PROV: Mat ket noi WiFi, thu lai...[0m
+[0;33mW (5546) WIFI_PROV: Mat ket noi WiFi, thu lai...[0m
+[0;33mW (7966) WIFI_PROV: Mat ket noi WiFi, thu lai...[0m
+[0;33mW (10376) WIFI_PROV: Mat ket noi WiFi, thu lai...[0m
+[0;32mI (10726) MAIN_APP: Do duoc: 9.17 Lux[0m
+[0;33mW (10726) MAIN_APP: Mat ket noi WiFi! (Lan 2/5)[0m
+[0;33mW (12796) WIFI_PROV: Mat ket noi WiFi, thu lai...[0m
+[0;33mW (15206) WIFI_PROV: Mat ket noi WiFi, thu lai...[0m
+[0;33mW (17626) WIFI_PROV: Mat ket noi WiFi, thu lai...[0m
+[0;32mI (17726) wifi:new:<13,0>, old:<1,0>, ap:<255,255>, sta:<13,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (17726) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (17736) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (17756) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (17776) wifi:connected with AC, aid = 1, channel 13, BW20, bssid = ce:20:8b:ba:e8:32[0m
+[0;32mI (17786) wifi:security: WPA2-PSK, phy: bgn, rssi: -37[0m
+[0;32mI (17786) wifi:pm start, type: 1[0m
+
+[0;32mI (17786) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (17816) wifi:dp: 2, bi: 102400, li: 4, scale listen interval from 307200 us to 409600 us[0m
+[0;32mI (17826) wifi:AP's beacon interval = 102400 us, DTIM period = 2[0m
+[0;32mI (18816) esp_netif_handlers: sta ip: 10.75.37.180, mask: 255.255.255.0, gw: 10.75.37.153[0m
+[0;32mI (18816) WIFI_PROV: Da co IP: 10.75.37.180[0m
+[0;32mI (20726) MAIN_APP: Do duoc: 9.17 Lux[0m
+[1;31mE (25736) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (25736) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (25736) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (25736) MAIN_APP: Loi HTTP POST: ESP_ERR_HTTP_CONNECT[0m
+[0;32mI (35746) MAIN_APP: Do duoc: 9.17 Lux[0m
+[1;31mE (40756) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (40756) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (40756) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (40756) MAIN_APP: Loi HTTP POST: ESP_ERR_HTTP_CONNECT[0m
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15916
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF HEAD-HASH-NOTFOUND 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Nov 21 2025 23:25:43[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (32) boot: chip revision: v3.1[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (38) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (50) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (72) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (82) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=2115ch (135516) map[0m
+[0;32mI (135) esp_image: segment 1: paddr=00031184 vaddr=3ffb0000 size=03f6ch ( 16236) load[0m
+[0;32mI (142) esp_image: segment 2: paddr=000350f8 vaddr=40080000 size=0af20h ( 44832) load[0m
+[0;32mI (159) esp_image: segment 3: paddr=00040020 vaddr=400d0020 size=a6318h (680728) map[0m
+[0;32mI (392) esp_image: segment 4: paddr=000e6340 vaddr=4008af20 size=0f898h ( 63640) load[0m
+[0;32mI (417) esp_image: segment 5: paddr=000f5be0 vaddr=50000000 size=00098h (   152) load[0m
+[0;32mI (430) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (430) boot: Disabling RNG early entropy source...[0m
+[0;32mI (441) cpu_start: Multicore app[0m
+[0;32mI (449) cpu_start: Pro cpu start user code[0m
+[0;32mI (449) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (449) app_init: Application information:[0m
+[0;32mI (449) app_init: Project name:     light_wifi_sensor[0m
+[0;32mI (454) app_init: App version:      1[0m
+[0;32mI (458) app_init: Compile time:     Nov 21 2025 23:24:48[0m
+[0;32mI (463) app_init: ELF file SHA256:  cf5970d08...[0m
+[0;32mI (467) app_init: ESP-IDF:          HEAD-HASH-NOTFOUND[0m
+[0;32mI (472) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (476) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (480) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (484) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (490) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (495) heap_init: At 3FFB8750 len 000278B0 (158 KiB): DRAM[0m
+[0;32mI (500) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (505) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (511) heap_init: At 4009A7B8 len 00005848 (22 KiB): IRAM[0m
+[0;32mI (518) spi_flash: detected chip: generic[0m
+[0;32mI (520) spi_flash: flash io: dio[0m
+[0;33mW (523) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (535) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (546) main_task: Started on CPU0[0m
+[0;32mI (556) main_task: Calling app_main()[0m
+[0;32mI (586) MAIN_APP: Server URL: http://192.168.1.10:8000/api/sensor[0m
+[0;32mI (596) WIFI_PROV: Tim thay WiFi: AC. Dang ket noi...[0m
+[0;32mI (606) wifi:wifi driver task: 3ffc10a8, prio:23, stack:6656, core=0[0m
+[0;32mI (616) wifi:wifi firmware version: 14da9b7[0m
+[0;32mI (626) wifi:wifi certification version: v7.0[0m
+[0;32mI (626) wifi:config NVS flash: enabled[0m
+[0;32mI (626) wifi:config nano formatting: disabled[0m
+[0;32mI (626) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (626) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (636) wifi:Init management short buffer num: 32[0m
+[0;32mI (636) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (646) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (646) wifi:Init static rx buffer num: 10[0m
+[0;32mI (646) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (656) wifi_init: rx ba win: 6[0m
+[0;32mI (656) wifi_init: accept mbox: 6[0m
+[0;32mI (656) wifi_init: tcpip mbox: 32[0m
+[0;32mI (666) wifi_init: udp mbox: 6[0m
+[0;32mI (666) wifi_init: tcp mbox: 6[0m
+[0;32mI (666) wifi_init: tcp tx win: 5760[0m
+[0;32mI (676) wifi_init: tcp rx win: 5760[0m
+[0;32mI (676) wifi_init: tcp mss: 1440[0m
+[0;32mI (676) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (686) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (686) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (696) phy_init: phy_version 4861,b71b5ad,Aug  5 2025,11:16:06[0m
+[0;32mI (776) wifi:mode : sta (80:f3:da:50:bb:5c)[0m
+[0;32mI (776) wifi:enable tsf[0m
+[0;32mI (786) MAIN_APP: Da co cau hinh -> Chay Sensor Task...[0m
+[0;32mI (786) BH1750: BH1750 initialized[0m
+[0;32mI (786) main_task: Returned from app_main()[0m
+[0;32mI (786) MAIN_APP: Do duoc: 0.00 Lux[0m
+[0;33mW (786) MAIN_APP: Mat ket noi WiFi! (Lan 1/5)[0m
+[0;32mI (806) wifi:new:<13,0>, old:<1,0>, ap:<255,255>, sta:<13,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (806) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (816) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (826) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (846) wifi:connected with AC, aid = 1, channel 13, BW20, bssid = ce:20:8b:ba:e8:32[0m
+[0;32mI (846) wifi:security: WPA2-PSK, phy: bgn, rssi: -18[0m
+[0;32mI (856) wifi:pm start, type: 1[0m
+
+[0;32mI (856) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (906) wifi:dp: 2, bi: 102400, li: 4, scale listen interval from 307200 us to 409600 us[0m
+[0;32mI (906) wifi:AP's beacon interval = 102400 us, DTIM period = 2[0m
+[0;32mI (1886) esp_netif_handlers: sta ip: 10.75.37.180, mask: 255.255.255.0, gw: 10.75.37.153[0m
+[0;32mI (1886) WIFI_PROV: Da co IP: 10.75.37.180[0m
+[0;33mW (2986) MAIN_APP: Nut nhan duoc bam! Giu 3s de Reset...[0m
+[1;31mE (5986) MAIN_APP: --- FACTORY RESET KICH HOAT ---[0m
+[0;32mI (7036) wifi:state: run -> init (0x0)[0m
+[0;32mI (7036) wifi:pm stop, total sleep time: 5581012 us / 6185066 us[0m
+
+[0;32mI (7036) wifi:new:<13,0>, old:<13,0>, ap:<255,255>, sta:<13,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;33mW (7046) WIFI_PROV: Mat ket noi WiFi, thu lai...[0m
+[0;32mI (7116) wifi:flush txq[0m
+[0;32mI (7116) wifi:stop sw txq[0m
+[0;32mI (7116) wifi:lmac stop hw txq[0m
+ets Jul 29 2019 12:21:46
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15916
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF HEAD-HASH-NOTFOUND 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Nov 21 2025 23:25:43[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (32) boot: chip revision: v3.1[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (38) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (50) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (72) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (82) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=2115ch (135516) map[0m
+[0;32mI (135) esp_image: segment 1: paddr=00031184 vaddr=3ffb0000 size=03f6ch ( 16236) load[0m
+[0;32mI (141) esp_image: segment 2: paddr=000350f8 vaddr=40080000 size=0af20h ( 44832) load[0m
+[0;32mI (159) esp_image: segment 3: paddr=00040020 vaddr=400d0020 size=a6318h (680728) map[0m
+[0;32mI (392) esp_image: segment 4: paddr=000e6340 vaddr=4008af20 size=0f898h ( 63640) load[0m
+[0;32mI (417) esp_image: segment 5: paddr=000f5be0 vaddr=50000000 size=00098h (   152) load[0m
+[0;32mI (430) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (430) boot: Disabling RNG early entropy source...[0m
+[0;32mI (441) cpu_start: Multicore app[0m
+[0;32mI (449) cpu_start: Pro cpu start user code[0m
+[0;32mI (449) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (449) app_init: Application information:[0m
+[0;32mI (449) app_init: Project name:     light_wifi_sensor[0m
+[0;32mI (454) app_init: App version:      1[0m
+[0;32mI (457) app_init: Compile time:     Nov 21 2025 23:24:48[0m
+[0;32mI (462) app_init: ELF file SHA256:  cf5970d08...[0m
+[0;32mI (467) app_init: ESP-IDF:          HEAD-HASH-NOTFOUND[0m
+[0;32mI (471) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (475) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (479) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (483) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (490) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (494) heap_init: At 3FFB8750 len 000278B0 (158 KiB): DRAM[0m
+[0;32mI (500) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (505) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (511) heap_init: At 4009A7B8 len 00005848 (22 KiB): IRAM[0m
+[0;32mI (517) spi_flash: detected chip: generic[0m
+[0;32mI (520) spi_flash: flash io: dio[0m
+[0;33mW (523) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (535) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (545) main_task: Started on CPU0[0m
+[0;32mI (555) main_task: Calling app_main()[0m
+[0;32mI (565) MAIN_APP: Server URL: http://192.168.1.10:8000/api/sensor[0m
+[0;33mW (565) MAIN_APP: Chua co cau hinh WiFi -> Bat che do AP...[0m
+[0;32mI (585) wifi:wifi driver task: 3ffc0ef0, prio:23, stack:6656, core=0[0m
+[0;32mI (585) wifi:wifi firmware version: 14da9b7[0m
+[0;32mI (585) wifi:wifi certification version: v7.0[0m
+[0;32mI (585) wifi:config NVS flash: enabled[0m
+[0;32mI (585) wifi:config nano formatting: disabled[0m
+[0;32mI (595) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (595) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (605) wifi:Init management short buffer num: 32[0m
+[0;32mI (605) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (605) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (615) wifi:Init static rx buffer num: 10[0m
+[0;32mI (615) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (625) wifi_init: rx ba win: 6[0m
+[0;32mI (625) wifi_init: accept mbox: 6[0m
+[0;32mI (625) wifi_init: tcpip mbox: 32[0m
+[0;32mI (625) wifi_init: udp mbox: 6[0m
+[0;32mI (635) wifi_init: tcp mbox: 6[0m
+[0;32mI (635) wifi_init: tcp tx win: 5760[0m
+[0;32mI (635) wifi_init: tcp rx win: 5760[0m
+[0;32mI (645) wifi_init: tcp mss: 1440[0m
+[0;32mI (645) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (645) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (915) phy_init: phy_version 4861,b71b5ad,Aug  5 2025,11:16:06[0m
+[0;33mW (915) phy_init: failed to load RF calibration data (0x1102), falling back to full calibration[0m
+[0;32mI (985) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(2)[0m
+[0;32mI (995) wifi:mode : softAP (80:f3:da:50:bb:5d)[0m
+[0;32mI (1005) wifi:Total power save buffer number: 16[0m
+[0;32mI (1005) wifi:Init max length of beacon: 752/752[0m
+[0;32mI (1005) wifi:Init max length of beacon: 752/752[0m
+[0;32mI (1005) WIFI_PROV: AP Started: ESP_Config[0m
+[0;32mI (1005) esp_netif_lwip: DHCP server started on interface WIFI_AP_DEF with IP: 192.168.4.1[0m
+[0;32mI (1025) main_task: Returned from app_main()[0m
+[0;32mI (20215) wifi:new:<1,0>, old:<1,1>, ap:<1,1>, sta:<255,255>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (20225) wifi:station: fa:c0:45:20:fc:3e join, AID=1, bgn, 20[0m
+[0;32mI (21605) esp_netif_lwip: DHCP server assigned IP to a client, IP is: 192.168.4.2[0m
+[0;32mI (22275) wifi:<ba-add>idx:2 (ifx:1, fa:c0:45:20:fc:3e), tid:0, ssn:16, winSize:64[0m
+[0;33mW (61505) httpd_uri: httpd_uri: Method '1' not allowed for URI '/save'[0m
+[0;33mW (61505) httpd_txrx: httpd_resp_send_err: 405 Method Not Allowed - Specified method is invalid for this resource[0m
+[0;33mW (61695) httpd_uri: httpd_uri: URI '/favicon.ico' not found[0m
+[0;33mW (61695) httpd_txrx: httpd_resp_send_err: 404 Not Found - Nothing matches the given URI[0m
+[0;33mW (63305) httpd_uri: httpd_uri: Method '1' not allowed for URI '/save'[0m
+[0;33mW (63305) httpd_txrx: httpd_resp_send_err: 405 Method Not Allowed - Specified method is invalid for this resource[0m
+[0;33mW (64505) httpd_uri: httpd_uri: Method '1' not allowed for URI '/save'[0m
+[0;33mW (64505) httpd_txrx: httpd_resp_send_err: 405 Method Not Allowed - Specified method is invalid for this resource[0m
+[0;32mI (138785) wifi:station: fa:c0:45:20:fc:3e leave, AID = 1, reason = 2, bss_flags is 691299, bss:0x3ffb9b04[0m
+[0;32mI (138785) wifi:new:<1,0>, old:<1,0>, ap:<1,1>, sta:<255,255>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (138785) wifi:<ba-del>idx:2, tid:0[0m
+[0;32mI (138795) wifi:new:<1,1>, old:<1,0>, ap:<1,1>, sta:<255,255>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (138885) wifi:flush txq[0m
+[0;32mI (138885) wifi:stop sw txq[0m
+[0;32mI (138885) wifi:lmac stop hw txq[0m
+ets Jul 29 2019 12:21:46
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15916
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF HEAD-HASH-NOTFOUND 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Nov 21 2025 23:25:43[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (32) boot: chip revision: v3.1[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (38) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (50) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (72) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (82) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=2115ch (135516) map[0m
+[0;32mI (135) esp_image: segment 1: paddr=00031184 vaddr=3ffb0000 size=03f6ch ( 16236) load[0m
+[0;32mI (141) esp_image: segment 2: paddr=000350f8 vaddr=40080000 size=0af20h ( 44832) load[0m
+[0;32mI (159) esp_image: segment 3: paddr=00040020 vaddr=400d0020 size=a6318h (680728) map[0m
+[0;32mI (392) esp_image: segment 4: paddr=000e6340 vaddr=4008af20 size=0f898h ( 63640) load[0m
+[0;32mI (417) esp_image: segment 5: paddr=000f5be0 vaddr=50000000 size=00098h (   152) load[0m
+[0;32mI (430) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (430) boot: Disabling RNG early entropy source...[0m
+[0;32mI (441) cpu_start: Multicore app[0m
+[0;32mI (449) cpu_start: Pro cpu start user code[0m
+[0;32mI (449) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (449) app_init: Application information:[0m
+[0;32mI (449) app_init: Project name:     light_wifi_sensor[0m
+[0;32mI (454) app_init: App version:      1[0m
+[0;32mI (457) app_init: Compile time:     Nov 21 2025 23:24:48[0m
+[0;32mI (462) app_init: ELF file SHA256:  cf5970d08...[0m
+[0;32mI (467) app_init: ESP-IDF:          HEAD-HASH-NOTFOUND[0m
+[0;32mI (471) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (475) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (479) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (483) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (490) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (494) heap_init: At 3FFB8750 len 000278B0 (158 KiB): DRAM[0m
+[0;32mI (500) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (505) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (511) heap_init: At 4009A7B8 len 00005848 (22 KiB): IRAM[0m
+[0;32mI (517) spi_flash: detected chip: generic[0m
+[0;32mI (520) spi_flash: flash io: dio[0m
+[0;33mW (523) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (535) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (545) main_task: Started on CPU0[0m
+[0;32mI (555) main_task: Calling app_main()[0m
+[0;32mI (585) MAIN_APP: Server URL: http://192.168.1.10:8000/api/sensor[0m
+[0;32mI (585) WIFI_PROV: Tim thay WiFi: Joe Biden. Dang ket noi...[0m
+[0;32mI (595) wifi:wifi driver task: 3ffc0fa0, prio:23, stack:6656, core=0[0m
+[0;32mI (605) wifi:wifi firmware version: 14da9b7[0m
+[0;32mI (605) wifi:wifi certification version: v7.0[0m
+[0;32mI (605) wifi:config NVS flash: enabled[0m
+[0;32mI (605) wifi:config nano formatting: disabled[0m
+[0;32mI (605) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (615) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (615) wifi:Init management short buffer num: 32[0m
+[0;32mI (625) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (625) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (625) wifi:Init static rx buffer num: 10[0m
+[0;32mI (635) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (635) wifi_init: rx ba win: 6[0m
+[0;32mI (635) wifi_init: accept mbox: 6[0m
+[0;32mI (645) wifi_init: tcpip mbox: 32[0m
+[0;32mI (645) wifi_init: udp mbox: 6[0m
+[0;32mI (645) wifi_init: tcp mbox: 6[0m
+[0;32mI (655) wifi_init: tcp tx win: 5760[0m
+[0;32mI (655) wifi_init: tcp rx win: 5760[0m
+[0;32mI (655) wifi_init: tcp mss: 1440[0m
+[0;32mI (655) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (665) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (665) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (705) phy_init: phy_version 4861,b71b5ad,Aug  5 2025,11:16:06[0m
+[0;32mI (785) wifi:mode : sta (80:f3:da:50:bb:5c)[0m
+[0;32mI (785) wifi:enable tsf[0m
+[0;32mI (785) MAIN_APP: Da co cau hinh -> Chay Sensor Task...[0m
+[0;32mI (785) BH1750: BH1750 initialized[0m
+[0;32mI (785) main_task: Returned from app_main()[0m
+[0;32mI (795) MAIN_APP: Do duoc: 0.00 Lux[0m
+[0;33mW (795) MAIN_APP: Mat ket noi WiFi! (Lan 1/5)[0m
+[0;32mI (795) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (805) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (2105) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (2115) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (2565) wifi:connected with Joe Biden, aid = 1, channel 1, BW20, bssid = 22:cd:5c:5a:b7:9b[0m
+[0;32mI (2565) wifi:security: WPA3-SAE, phy: bgn, rssi: -49[0m
+[0;32mI (2585) wifi:pm start, type: 1[0m
+
+[0;32mI (2585) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (2585) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (2675) wifi:<ba-add>idx:0 (ifx:0, 22:cd:5c:5a:b7:9b), tid:0, ssn:2, winSize:64[0m
+[0;32mI (3685) esp_netif_handlers: sta ip: 172.20.10.2, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (3685) WIFI_PROV: Da co IP: 172.20.10.2[0m
+[0;32mI (10795) MAIN_APP: Do duoc: 9.17 Lux[0m
+[1;31mE (15805) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (15805) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (15805) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (15805) MAIN_APP: Loi HTTP POST: ESP_ERR_HTTP_CONNECT[0m
+[0;32mI (25815) MAIN_APP: Do duoc: 9.17 Lux[0m
+[1;31mE (30825) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (30825) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (30825) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (30825) MAIN_APP: Loi HTTP POST: ESP_ERR_HTTP_CONNECT[0m
+[0;32mI (40835) MAIN_APP: Do duoc: 9.17 Lux[0m
+[1;31mE (45845) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (45845) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (45845) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (45845) MAIN_APP: Loi HTTP POST: ESP_ERR_HTTP_CONNECT[0m
+[0;32mI (55855) MAIN_APP: Do duoc: 9.17 Lux[0m
+[1;31mE (60865) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (60865) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (60865) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (60865) MAIN_APP: Loi HTTP POST: ESP_ERR_HTTP_CONNECT[0m
+[0;32mI (70875) MAIN_APP: Do duoc: 8.33 Lux[0m
+[1;31mE (75885) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (75885) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (75885) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (75885) MAIN_APP: Loi HTTP POST: ESP_ERR_HTTP_CONNECT[0m
+[0;32mI (85895) MAIN_APP: Do duoc: 8.33 Lux[0m
+[1;31mE (90905) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (90905) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (90905) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (90905) MAIN_APP: Loi HTTP POST: ESP_ERR_HTTP_CONNECT[0m
+[0;32mI (100905) MAIN_APP: Do duoc: 8.33 Lux[0m
+[1;31mE (105915) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (105915) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (105915) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (105915) MAIN_APP: Loi HTTP POST: ESP_ERR_HTTP_CONNECT[0m
+[0;32mI (115925) MAIN_APP: Do duoc: 8.33 Lux[0m
+[1;31mE (120935) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (120935) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (120935) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (120935) MAIN_APP: Loi HTTP POST: ESP_ERR_HTTP_CONNECT[0m
+[0;32mI (130945) MAIN_APP: Do duoc: 9.17 Lux[0m
+[1;31mE (135955) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (135955) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (135955) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (135955) MAIN_APP: Loi HTTP POST: ESP_ERR_HTTP_CONNECT[0m
+[0;32mI (145965) MAIN_APP: Do duoc: 9.17 Lux[0m
+[1;31mE (150975) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (150975) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (150975) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (150975) MAIN_APP: Loi HTTP POST: ESP_ERR_HTTP_CONNECT[0m
+[0;32mI (160985) MAIN_APP: Do duoc: 9.17 Lux[0m
+[1;31mE (165995) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (165995) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (165995) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (165995) MAIN_APP: Loi HTTP POST: ESP_ERR_HTTP_CONNECT[0m
+[0;32mI (176005) MAIN_APP: Do duoc: 9.17 Lux[0m
+[1;31mE (181015) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (181015) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (181015) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (181015) MAIN_APP: Loi HTTP POST: ESP_ERR_HTTP_CONNECT[0m
+[0;32mI (191025) MAIN_APP: Do duoc: 9.17 Lux[0m
+[1;31mE (196035) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (196035) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (196035) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (196035) MAIN_APP: Loi HTTP POST: ESP_ERR_HTTP_CONNECT[0m
+[0;32mI (206045) MAIN_APP: Do duoc: 9.17 Lux[0m
+[1;31mE (211055) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (211055) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (211055) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (211055) MAIN_APP: Loi HTTP POST: ESP_ERR_HTTP_CONNECT[0m
+[0;32mI (221065) MAIN_APP: Do duoc: 9.17 Lux[0m
+[1;31mE (226075) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (226075) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (226075) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (226075) MAIN_APP: Loi HTTP POST: ESP_ERR_HTTP_CONNECT[0m
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15916
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF HEAD-HASH-NOTFOUND 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Nov 21 2025 23:25:43[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (32) boot: chip revision: v3.1[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (38) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (50) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (72) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (82) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=2115ch (135516) map[0m
+[0;32mI (135) esp_image: segment 1: paddr=00031184 vaddr=3ffb0000 size=03f6ch ( 16236) load[0m
+[0;32mI (142) esp_image: segment 2: paddr=000350f8 vaddr=40080000 size=0af20h ( 44832) load[0m
+[0;32mI (159) esp_image: segment 3: paddr=00040020 vaddr=400d0020 size=a6318h (680728) map[0m
+[0;32mI (392) esp_image: segment 4: paddr=000e6340 vaddr=4008af20 size=0f898h ( 63640) load[0m
+[0;32mI (417) esp_image: segment 5: paddr=000f5be0 vaddr=50000000 size=00098h (   152) load[0m
+[0;32mI (430) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (430) boot: Disabling RNG early entropy source...[0m
+[0;32mI (441) cpu_start: Multicore app[0m
+[0;32mI (449) cpu_start: Pro cpu start user code[0m
+[0;32mI (449) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (449) app_init: Application information:[0m
+[0;32mI (449) app_init: Project name:     light_wifi_sensor[0m
+[0;32mI (454) app_init: App version:      1[0m
+[0;32mI (458) app_init: Compile time:     Nov 21 2025 23:24:48[0m
+[0;32mI (463) app_init: ELF file SHA256:  cf5970d08...[0m
+[0;32mI (467) app_init: ESP-IDF:          HEAD-HASH-NOTFOUND[0m
+[0;32mI (472) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (476) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (480) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (484) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (490) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (495) heap_init: At 3FFB8750 len 000278B0 (158 KiB): DRAM[0m
+[0;32mI (500) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (505) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (511) heap_init: At 4009A7B8 len 00005848 (22 KiB): IRAM[0m
+[0;32mI (518) spi_flash: detected chip: generic[0m
+[0;32mI (520) spi_flash: flash io: dio[0m
+[0;33mW (523) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (535) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (546) main_task: Started on CPU0[0m
+[0;32mI (556) main_task: Calling app_main()[0m
+[0;32mI (596) MAIN_APP: Server URL: http://192.168.1.10:8000/api/sensor[0m
+[0;32mI (596) WIFI_PROV: Tim thay WiFi: Joe Biden. Dang ket noi...[0m
+[0;32mI (606) wifi:wifi driver task: 3ffc1024, prio:23, stack:6656, core=0[0m
+[0;32mI (616) wifi:wifi firmware version: 14da9b7[0m
+[0;32mI (616) wifi:wifi certification version: v7.0[0m
+[0;32mI (626) wifi:config NVS flash: enabled[0m
+[0;32mI (626) wifi:config nano formatting: disabled[0m
+[0;32mI (626) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (626) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (636) wifi:Init management short buffer num: 32[0m
+[0;32mI (636) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (646) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (646) wifi:Init static rx buffer num: 10[0m
+[0;32mI (646) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (656) wifi_init: rx ba win: 6[0m
+[0;32mI (656) wifi_init: accept mbox: 6[0m
+[0;32mI (656) wifi_init: tcpip mbox: 32[0m
+[0;32mI (666) wifi_init: udp mbox: 6[0m
+[0;32mI (666) wifi_init: tcp mbox: 6[0m
+[0;32mI (666) wifi_init: tcp tx win: 5760[0m
+[0;32mI (676) wifi_init: tcp rx win: 5760[0m
+[0;32mI (676) wifi_init: tcp mss: 1440[0m
+[0;32mI (676) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (686) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (686) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (696) phy_init: phy_version 4861,b71b5ad,Aug  5 2025,11:16:06[0m
+[0;32mI (776) wifi:mode : sta (80:f3:da:50:bb:5c)[0m
+[0;32mI (776) wifi:enable tsf[0m
+[0;32mI (776) MAIN_APP: Da co cau hinh -> Chay Sensor Task...[0m
+[0;32mI (776) BH1750: BH1750 initialized[0m
+[0;32mI (786) main_task: Returned from app_main()[0m
+[0;32mI (786) MAIN_APP: Do duoc: 0.00 Lux[0m
+[0;33mW (786) MAIN_APP: Mat ket noi WiFi! (Lan 1/5)[0m
+[0;32mI (786) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (796) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (2096) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (2106) wifi:Association refused temporarily time 196, comeback time 296 (TUs)[0m
+[0;32mI (2416) wifi:state: assoc -> auth (0xb0)[0m
+[0;32mI (3716) wifi:state: auth -> assoc (0x0)[0m
+[1;31mE (3726) wifi:Association refused too many times, max allowed 1[0m
+[0;32mI (3726) wifi:state: assoc -> init (0xd010)[0m
+[0;32mI (3736) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;33mW (3736) WIFI_PROV: Mat ket noi WiFi, thu lai...[0m
+[0;33mW (6146) WIFI_PROV: Mat ket noi WiFi, thu lai...[0m
+[0;32mI (6156) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (6156) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (7476) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (7476) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (10786) MAIN_APP: Do duoc: 10.83 Lux[0m
+[0;33mW (10786) MAIN_APP: Mat ket noi WiFi! (Lan 2/5)[0m
+[0;32mI (17486) wifi:state: run -> init (0xcc00)[0m
+[0;32mI (17496) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;33mW (17496) WIFI_PROV: Mat ket noi WiFi, thu lai...[0m
+[0;33mW (19906) WIFI_PROV: Mat ket noi WiFi, thu lai...[0m
+[0;32mI (19916) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (19926) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (20786) MAIN_APP: Do duoc: 9.17 Lux[0m
+[0;33mW (20786) MAIN_APP: Mat ket noi WiFi! (Lan 3/5)[0m
+[0;32mI (21226) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (21236) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (30786) MAIN_APP: Do duoc: 9.17 Lux[0m
+[0;33mW (30786) MAIN_APP: Mat ket noi WiFi! (Lan 4/5)[0m
+[0;32mI (31236) wifi:state: run -> init (0xcc00)[0m
+[0;32mI (31246) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;33mW (31246) WIFI_PROV: Mat ket noi WiFi, thu lai...[0m
+[0;33mW (33666) WIFI_PROV: Mat ket noi WiFi, thu lai...[0m
+[0;32mI (33666) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (33676) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (34976) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (34986) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (40786) MAIN_APP: Do duoc: 35.00 Lux[0m
+[0;33mW (40786) MAIN_APP: Mat ket noi WiFi! (Lan 5/5)[0m
+[1;31mE (40786) MAIN_APP: Mat ket noi qua lau! Di ngu 60 giay de tiet kiem dien...[0m
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15916
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF HEAD-HASH-NOTFOUND 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Nov 21 2025 23:25:43[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (32) boot: chip revision: v3.1[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (38) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (50) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (72) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (82) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=2115ch (135516) map[0m
+[0;32mI (135) esp_image: segment 1: paddr=00031184 vaddr=3ffb0000 size=03f6ch ( 16236) load[0m
+[0;32mI (142) esp_image: segment 2: paddr=000350f8 vaddr=40080000 size=0af20h ( 44832) load[0m
+[0;32mI (159) esp_image: segment 3: paddr=00040020 vaddr=400d0020 size=a6318h (680728) map[0m
+[0;32mI (392) esp_image: segment 4: paddr=000e6340 vaddr=4008af20 size=0f898h ( 63640) load[0m
+[0;32mI (417) esp_image: segment 5: paddr=000f5be0 vaddr=50000000 size=00098h (   152) load[0m
+[0;32mI (430) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (430) boot: Disabling RNG early entropy source...[0m
+[0;32mI (441) cpu_start: Multicore app[0m
+[0;32mI (449) cpu_start: Pro cpu start user code[0m
+[0;32mI (449) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (449) app_init: Application information:[0m
+[0;32mI (449) app_init: Project name:     light_wifi_sensor[0m
+[0;32mI (454) app_init: App version:      1[0m
+[0;32mI (458) app_init: Compile time:     Nov 21 2025 23:24:48[0m
+[0;32mI (463) app_init: ELF file SHA256:  cf5970d08...[0m
+[0;32mI (467) app_init: ESP-IDF:          HEAD-HASH-NOTFOUND[0m
+[0;32mI (472) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (476) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (480) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (484) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (490) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (495) heap_init: At 3FFB8750 len 000278B0 (158 KiB): DRAM[0m
+[0;32mI (500) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (505) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (511) heap_init: At 4009A7B8 len 00005848 (22 KiB): IRAM[0m
+[0;32mI (518) spi_flash: detected chip: generic[0m
+[0;32mI (520) spi_flash: flash io: dio[0m
+[0;33mW (523) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (535) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (546) main_task: Started on CPU0[0m
+[0;32mI (556) main_task: Calling app_main()[0m
+[0;32mI (596) MAIN_APP: Server URL: http://192.168.1.10:8000/api/sensor[0m
+[0;32mI (596) WIFI_PROV: Tim thay WiFi: Joe Biden. Dang ket noi...[0m
+[0;32mI (606) wifi:wifi driver task: 3ffc1024, prio:23, stack:6656, core=0[0m
+[0;32mI (616) wifi:wifi firmware version: 14da9b7[0m
+[0;32mI (616) wifi:wifi certification version: v7.0[0m
+[0;32mI (626) wifi:config NVS flash: enabled[0m
+[0;32mI (626) wifi:config nano formatting: disabled[0m
+[0;32mI (626) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (626) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (636) wifi:Init management short buffer num: 32[0m
+[0;32mI (636) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (646) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (646) wifi:Init static rx buffer num: 10[0m
+[0;32mI (646) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (656) wifi_init: rx ba win: 6[0m
+[0;32mI (656) wifi_init: accept mbox: 6[0m
+[0;32mI (656) wifi_init: tcpip mbox: 32[0m
+[0;32mI (666) wifi_init: udp mbox: 6[0m
+[0;32mI (666) wifi_init: tcp mbox: 6[0m
+[0;32mI (666) wifi_init: tcp tx win: 5760[0m
+[0;32mI (676) wifi_init: tcp rx win: 5760[0m
+[0;32mI (676) wifi_init: tcp mss: 1440[0m
+[0;32mI (676) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (686) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (686) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (696) phy_init: phy_version 4861,b71b5ad,Aug  5 2025,11:16:06[0m
+[0;32mI (776) wifi:mode : sta (80:f3:da:50:bb:5c)[0m
+[0;32mI (776) wifi:enable tsf[0m
+[0;32mI (776) MAIN_APP: Da co cau hinh -> Chay Sensor Task...[0m
+[0;32mI (776) BH1750: BH1750 initialized[0m
+[0;32mI (786) main_task: Returned from app_main()[0m
+[0;32mI (786) MAIN_APP: Do duoc: 0.00 Lux[0m
+[0;33mW (786) MAIN_APP: Mat ket noi WiFi! (Lan 1/5)[0m
+[0;33mW (3196) WIFI_PROV: Mat ket noi WiFi, thu lai...[0m
+[0;32mI (3206) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (3206) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (4506) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (4516) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (10786) MAIN_APP: Do duoc: 7.50 Lux[0m
+[0;33mW (10786) MAIN_APP: Mat ket noi WiFi! (Lan 2/5)[0m
+[0;32mI (14516) wifi:state: run -> init (0xcc00)[0m
+[0;32mI (14526) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;33mW (14526) WIFI_PROV: Mat ket noi WiFi, thu lai...[0m
+[0;33mW (16946) WIFI_PROV: Mat ket noi WiFi, thu lai...[0m
+[0;32mI (16946) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (16956) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (18286) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (18296) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (20786) MAIN_APP: Do duoc: 10.00 Lux[0m
+[0;33mW (20786) MAIN_APP: Mat ket noi WiFi! (Lan 3/5)[0m
+[0;32mI (28306) wifi:state: run -> init (0xcc00)[0m
+[0;32mI (28316) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;33mW (28316) WIFI_PROV: Mat ket noi WiFi, thu lai...[0m
+[0;33mW (30726) WIFI_PROV: Mat ket noi WiFi, thu lai...[0m
+[0;32mI (30736) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (30736) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (30786) MAIN_APP: Do duoc: 10.00 Lux[0m
+[0;33mW (30786) MAIN_APP: Mat ket noi WiFi! (Lan 4/5)[0m
+[0;32mI (32046) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (32056) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (38446) wifi:state: run -> init (0x3c0)[0m
+[0;32mI (38456) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;33mW (38456) WIFI_PROV: Mat ket noi WiFi, thu lai...[0m
+[0;32mI (40786) MAIN_APP: Do duoc: 10.00 Lux[0m
+[0;33mW (40786) MAIN_APP: Mat ket noi WiFi! (Lan 5/5)[0m
+[1;31mE (40786) MAIN_APP: Mat ket noi qua lau! Di ngu 60 giay de tiet kiem dien...[0m
+[0;33mW (40866) WIFI_PROV: Mat ket noi WiFi, thu lai...[0m
+[0;32mI (40876) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (40876) wifi:state: init -> auth (0xb0)[0m
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15916
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF HEAD-HASH-NOTFOUND 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Nov 21 2025 23:25:43[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (32) boot: chip revision: v3.1[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (38) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (50) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (72) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (82) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=2115ch (135516) map[0m
+[0;32mI (135) esp_image: segment 1: paddr=00031184 vaddr=3ffb0000 size=03f6ch ( 16236) load[0m
+[0;32mI (142) esp_image: segment 2: paddr=000350f8 vaddr=40080000 size=0af20h ( 44832) load[0m
+[0;32mI (159) esp_image: segment 3: paddr=00040020 vaddr=400d0020 size=a6318h (680728) map[0m
+[0;32mI (392) esp_image: segment 4: paddr=000e6340 vaddr=4008af20 size=0f898h ( 63640) load[0m
+[0;32mI (417) esp_image: segment 5: paddr=000f5be0 vaddr=50000000 size=00098h (   152) load[0m
+[0;32mI (430) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (430) boot: Disabling RNG early entropy source...[0m
+[0;32mI (441) cpu_start: Multicore app[0m
+[0;32mI (449) cpu_start: Pro cpu start user code[0m
+[0;32mI (449) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (449) app_init: Application information:[0m
+[0;32mI (449) app_init: Project name:     light_wifi_sensor[0m
+[0;32mI (454) app_init: App version:      1[0m
+[0;32mI (458) app_init: Compile time:     Nov 21 2025 23:24:48[0m
+[0;32mI (463) app_init: ELF file SHA256:  cf5970d08...[0m
+[0;32mI (467) app_init: ESP-IDF:          HEAD-HASH-NOTFOUND[0m
+[0;32mI (472) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (476) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (480) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (484) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (490) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (495) heap_init: At 3FFB8750 len 000278B0 (158 KiB): DRAM[0m
+[0;32mI (500) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (505) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (511) heap_init: At 4009A7B8 len 00005848 (22 KiB): IRAM[0m
+[0;32mI (518) spi_flash: detected chip: generic[0m
+[0;32mI (520) spi_flash: flash io: dio[0m
+[0;33mW (523) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (535) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (546) main_task: Started on CPU0[0m
+[0;32mI (556) main_task: Calling app_main()[0m
+[0;32mI (596) MAIN_APP: Server URL: http://192.168.1.10:8000/api/sensor[0m
+[0;32mI (596) WIFI_PROV: Tim thay WiFi: Joe Biden. Dang ket noi...[0m
+[0;32mI (606) wifi:wifi driver task: 3ffc1024, prio:23, stack:6656, core=0[0m
+[0;32mI (616) wifi:wifi firmware version: 14da9b7[0m
+[0;32mI (616) wifi:wifi certification version: v7.0[0m
+[0;32mI (626) wifi:config NVS flash: enabled[0m
+[0;32mI (626) wifi:config nano formatting: disabled[0m
+[0;32mI (626) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (626) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (636) wifi:Init management short buffer num: 32[0m
+[0;32mI (636) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (646) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (646) wifi:Init static rx buffer num: 10[0m
+[0;32mI (646) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (656) wifi_init: rx ba win: 6[0m
+[0;32mI (656) wifi_init: accept mbox: 6[0m
+[0;32mI (656) wifi_init: tcpip mbox: 32[0m
+[0;32mI (666) wifi_init: udp mbox: 6[0m
+[0;32mI (666) wifi_init: tcp mbox: 6[0m
+[0;32mI (666) wifi_init: tcp tx win: 5760[0m
+[0;32mI (676) wifi_init: tcp rx win: 5760[0m
+[0;32mI (676) wifi_init: tcp mss: 1440[0m
+[0;32mI (676) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (686) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (686) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (696) phy_init: phy_version 4861,b71b5ad,Aug  5 2025,11:16:06[0m
+[0;32mI (776) wifi:mode : sta (80:f3:da:50:bb:5c)[0m
+[0;32mI (776) wifi:enable tsf[0m
+[0;32mI (776) MAIN_APP: Da co cau hinh -> Chay Sensor Task...[0m
+[0;32mI (786) BH1750: BH1750 initialized[0m
+[0;32mI (786) main_task: Returned from app_main()[0m
+[0;32mI (786) MAIN_APP: Do duoc: 0.00 Lux[0m
+[0;33mW (786) MAIN_APP: Mat ket noi WiFi! (Lan 1/5)[0m
+[0;32mI (786) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (796) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (5546) wifi:state: auth -> init (0x200)[0m
+[0;32mI (5566) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;33mW (5566) WIFI_PROV: Mat ket noi WiFi, thu lai...[0m
+[0;33mW (7976) WIFI_PROV: Mat ket noi WiFi, thu lai...[0m
+[0;32mI (7996) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (7996) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (9306) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (9326) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (9706) wifi:connected with Joe Biden, aid = 1, channel 1, BW20, bssid = 0a:24:5d:fc:45:20[0m
+[0;32mI (9706) wifi:security: WPA3-SAE, phy: bgn, rssi: -63[0m
+[0;32mI (9706) wifi:pm start, type: 1[0m
+
+[0;32mI (9706) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (9776) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (9996) wifi:<ba-add>idx:0 (ifx:0, 0a:24:5d:fc:45:20), tid:0, ssn:2, winSize:64[0m
+[0;32mI (10786) MAIN_APP: Do duoc: 9.17 Lux[0m
+[0;33mW (10786) MAIN_APP: Mat ket noi WiFi! (Lan 2/5)[0m
+[0;32mI (11006) esp_netif_handlers: sta ip: 172.20.10.2, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (11006) WIFI_PROV: Da co IP: 172.20.10.2[0m
+[0;32mI (20786) MAIN_APP: Do duoc: 9.17 Lux[0m
+[1;31mE (25796) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (25796) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (25796) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (25796) MAIN_APP: Loi HTTP POST: ESP_ERR_HTTP_CONNECT[0m
+[0;32mI (35806) MAIN_APP: Do duoc: 8.33 Lux[0m
+[1;31mE (40816) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (40816) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (40816) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (40816) MAIN_APP: Loi HTTP POST: ESP_ERR_HTTP_CONNECT[0m
+[0;32mI (50826) MAIN_APP: Do duoc: 8.33 Lux[0m
+[1;31mE (55836) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (55836) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (55836) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (55836) MAIN_APP: Loi HTTP POST: ESP_ERR_HTTP_CONNECT[0m
+[0;32mI (65836) MAIN_APP: Do duoc: 8.33 Lux[0m
+[1;31mE (70846) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (70846) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (70846) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (70846) MAIN_APP: Loi HTTP POST: ESP_ERR_HTTP_CONNECT[0m
+[0;32mI (80856) MAIN_APP: Do duoc: 9.17 Lux[0m
+[1;31mE (85866) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (85866) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (85866) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (85866) MAIN_APP: Loi HTTP POST: ESP_ERR_HTTP_CONNECT[0m
+[0;32mI (95876) MAIN_APP: Do duoc: 9.17 Lux[0m
+[1;31mE (100886) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (100886) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (100886) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (100886) MAIN_APP: Loi HTTP POST: ESP_ERR_HTTP_CONNECT[0m
+[0;32mI (110896) MAIN_APP: Do duoc: 9.17 Lux[0m
+[1;31mE (115906) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (115906) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (115906) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (115906) MAIN_APP: Loi HTTP POST: ESP_ERR_HTTP_CONNECT[0m
+[0;32mI (125916) MAIN_APP: Do duoc: 9.17 Lux[0m
+[1;31mE (130926) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (130926) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (130926) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (130926) MAIN_APP: Loi HTTP POST: ESP_ERR_HTTP_CONNECT[0m
+[0;32mI (140936) MAIN_APP: Do duoc: 9.17 Lux[0m

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>IoT Light Monitor</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f4f7f6; margin: 0; padding: 20px; }
+        .container { max-width: 1000px; margin: 0 auto; background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        h1 { text-align: center; color: #333; }
+        .chart-container { position: relative; height: 400px; width: 100%; margin-bottom: 30px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { padding: 12px; text-align: left; border-bottom: 1px solid #ddd; }
+        th { background-color: #007bff; color: white; }
+        tr:hover { background-color: #f1f1f1; }
+        .status { text-align: center; margin-bottom: 10px; color: #666; font-size: 0.9em; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>💡 Giám Sát Ánh Sáng Thời Gian Thực</h1>
+    <div class="status">Dữ liệu tự cập nhật mỗi 5 giây</div>
+
+    <div class="chart-container">
+        <canvas id="luxChart"></canvas>
+    </div>
+
+    <h3>Lịch sử đo gần nhất</h3>
+    <table id="dataTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Device</th>
+                <th>Lux (Cường độ)</th>
+                <th>Thời gian</th>
+            </tr>
+        </thead>
+        <tbody>
+            </tbody>
+    </table>
+</div>
+
+<script>
+    let myChart = null;
+
+    // Khởi tạo biểu đồ rỗng
+    function initChart() {
+        const ctx = document.getElementById('luxChart').getContext('2d');
+        myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: [], // Thời gian
+                datasets: [{
+                    label: 'Cường độ sáng (Lux)',
+                    data: [],
+                    borderColor: '#FF9800',
+                    backgroundColor: 'rgba(255, 152, 0, 0.2)',
+                    borderWidth: 2,
+                    fill: true,
+                    tension: 0.4 // Làm mượt đường cong
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: { beginAtZero: true }
+                },
+                animation: false // Tắt hiệu ứng load lại để đỡ giật
+            }
+        });
+    }
+
+    // Hàm format ngày tháng cho đẹp
+    function formatDate(isoString) {
+        const d = new Date(isoString);
+        return d.toLocaleString('vi-VN');
+    }
+
+    // Hàm lấy dữ liệu và update giao diện
+    async function reloadData() {
+        try {
+            // Gọi API lấy 50 điểm dữ liệu mới nhất
+            const response = await fetch('/api/readings?limit=20'); // Lấy 20 điểm vẽ cho đẹp
+            const data = await response.json(); 
+            // Data trả về đã được sort Cũ -> Mới từ API
+
+            // 1. Update Biểu Đồ
+            const labels = data.map(item => {
+                const d = new Date(item.timestamp);
+                return d.toLocaleTimeString('vi-VN'); // Chỉ lấy giờ phút giây
+            });
+            const values = data.map(item => item.lux);
+
+            myChart.data.labels = labels;
+            myChart.data.datasets[0].data = values;
+            myChart.update();
+
+            // 2. Update Bảng (Đảo ngược lại để Mới nhất lên đầu)
+            const tbody = document.querySelector('#dataTable tbody');
+            tbody.innerHTML = ''; // Xóa cũ
+            
+            // Clone mảng data rồi đảo ngược để hiển thị bảng
+            [...data].reverse().forEach(row => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td>${row.id}</td>
+                    <td>${row.device_id}</td>
+                    <td style="font-weight:bold; color:#FF5722">${row.lux.toFixed(2)}</td>
+                    <td>${formatDate(row.timestamp)}</td>
+                `;
+                tbody.appendChild(tr);
+            });
+
+        } catch (error) {
+            console.error("Lỗi tải dữ liệu:", error);
+        }
+    }
+
+    // Chạy lần đầu
+    initChart();
+    reloadData();
+
+    // Lặp lại mỗi 5 giây
+    setInterval(reloadData, 5000);
+
+</script>
+
+</body>
+</html>
