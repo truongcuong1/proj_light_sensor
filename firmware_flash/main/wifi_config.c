@@ -86,7 +86,7 @@ static esp_err_t handle_root(httpd_req_t *req){
     httpd_resp_send(req, prov_page, HTTPD_RESP_USE_STRLEN);
     return ESP_OK;
 }
-
+// hàm để lưu cái serverurl
 static esp_err_t handle_save(httpd_req_t *req){
     char buf[512];
     int ret = httpd_req_recv(req, buf, sizeof(buf)-1);
@@ -155,7 +155,7 @@ int wifi_is_connected(void) {
 }
 
 esp_err_t wifi_prov_start_ap(void){
-    esp_netif_create_default_wifi_ap();
+    esp_netif_create_default_wifi_ap(); // cái ip của con esp32 từ đây ra này
     wifi_init_config_t cfg = WIFI_INIT_CONFIG_DEFAULT();
     esp_wifi_init(&cfg);
 

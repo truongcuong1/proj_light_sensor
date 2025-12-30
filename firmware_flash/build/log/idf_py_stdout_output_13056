@@ -1,0 +1,1323 @@
+Command: C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe c:\Espressif\frameworks\esp-idf-v5.5.1\v5.5.1\esp-idf\tools/idf_monitor.py -p COM6 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 C:\Users\DELL\new_project_light_wifi\firmware_flash\build\light_wifi_sensor.elf C:\Users\DELL\new_project_light_wifi\firmware_flash\build\bootloader\bootloader.elf --force-color -m 'C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'c:\Espressif\frameworks\esp-idf-v5.5.1\v5.5.1\esp-idf\tools\idf.py' '-p' 'COM6'
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15916
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF v5.5.1 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Dec 30 2025 11:58:29[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.1[0m
+[0;32mI (33) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (44) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (51) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (64) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (77) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=2113ch (135484) map[0m
+[0;32mI (134) esp_image: segment 1: paddr=00031164 vaddr=3ffb0000 size=03f6ch ( 16236) load[0m
+[0;32mI (141) esp_image: segment 2: paddr=000350d8 vaddr=40080000 size=0af40h ( 44864) load[0m
+[0;32mI (158) esp_image: segment 3: paddr=00040020 vaddr=400d0020 size=a62f8h (680696) map[0m
+[0;32mI (391) esp_image: segment 4: paddr=000e6320 vaddr=4008af40 size=0f878h ( 63608) load[0m
+[0;32mI (416) esp_image: segment 5: paddr=000f5ba0 vaddr=50000000 size=00098h (   152) load[0m
+[0;32mI (429) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (429) boot: Disabling RNG early entropy source...[0m
+[0;32mI (440) cpu_start: Multicore app[0m
+[0;32mI (448) cpu_start: Pro cpu start user code[0m
+[0;32mI (448) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (448) app_init: Application information:[0m
+[0;32mI (448) app_init: Project name:     light_wifi_sensor[0m
+[0;32mI (453) app_init: App version:      89d52fe-dirty[0m
+[0;32mI (458) app_init: Compile time:     Dec 30 2025 11:58:00[0m
+[0;32mI (463) app_init: ELF file SHA256:  c52603034...[0m
+[0;32mI (467) app_init: ESP-IDF:          v5.5.1[0m
+[0;32mI (471) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (475) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (479) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (483) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (489) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (494) heap_init: At 3FFB8750 len 000278B0 (158 KiB): DRAM[0m
+[0;32mI (499) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (504) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (510) heap_init: At 4009A7B8 len 00005848 (22 KiB): IRAM[0m
+[0;33mW (517) spi_flash: Detected boya flash chip but using generic driver. For optimal functionality, enable `SPI_FLASH_SUPPORT_BOYA_CHIP` in menuconfig[0m
+[0;32mI (528) spi_flash: detected chip: generic[0m
+[0;32mI (532) spi_flash: flash io: dio[0m
+[0;33mW (535) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (547) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (558) main_task: Started on CPU0[0m
+[0;32mI (568) main_task: Calling app_main()[0m
+[0;32mI (588) MAIN_APP: Target Server URL: http://192.168.1.10:8000/api/sensor[0m
+[0;33mW (588) MAIN_APP: Chua co WiFi -> Bat che do AP (Phat WiFi) de cau hinh...[0m
+[0;32mI (598) wifi:wifi driver task: 3ffc0f10, prio:23, stack:6656, core=0[0m
+[0;32mI (598) wifi:wifi firmware version: 14da9b7[0m
+[0;32mI (598) wifi:wifi certification version: v7.0[0m
+[0;32mI (598) wifi:config NVS flash: enabled[0m
+[0;32mI (608) wifi:config nano formatting: disabled[0m
+[0;32mI (608) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (618) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (618) wifi:Init management short buffer num: 32[0m
+[0;32mI (618) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (628) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (628) wifi:Init static rx buffer num: 10[0m
+[0;32mI (638) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (638) wifi_init: rx ba win: 6[0m
+[0;32mI (638) wifi_init: accept mbox: 6[0m
+[0;32mI (648) wifi_init: tcpip mbox: 32[0m
+[0;32mI (648) wifi_init: udp mbox: 6[0m
+[0;32mI (648) wifi_init: tcp mbox: 6[0m
+[0;32mI (658) wifi_init: tcp tx win: 5760[0m
+[0;32mI (658) wifi_init: tcp rx win: 5760[0m
+[0;32mI (658) wifi_init: tcp mss: 1440[0m
+[0;32mI (658) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (668) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (928) phy_init: phy_version 4861,b71b5ad,Aug  5 2025,11:16:06[0m
+[0;33mW (928) phy_init: failed to load RF calibration data (0x1102), falling back to full calibration[0m
+[0;32mI (1008) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(2)[0m
+[0;32mI (1018) wifi:mode : softAP (5c:01:3b:9c:ce:d9)[0m
+[0;32mI (1028) wifi:Total power save buffer number: 16[0m
+[0;32mI (1028) wifi:Init max length of beacon: 752/752[0m
+[0;32mI (1028) wifi:Init max length of beacon: 752/752[0m
+[0;32mI (1028) WIFI_PROV: AP Started: ESP_Config[0m
+[0;32mI (1028) esp_netif_lwip: DHCP server started on interface WIFI_AP_DEF with IP: 192.168.4.1[0m
+[0;32mI (1048) main_task: Returned from app_main()[0m
+[0;32mI (7118) wifi:new:<1,1>, old:<1,1>, ap:<1,1>, sta:<255,255>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (7118) wifi:station: 48:51:b7:21:4d:b4 join, AID=1, bgn, 40U[0m
+[0;32mI (7538) esp_netif_lwip: DHCP server assigned IP to a client, IP is: 192.168.4.2[0m
+[0;32mI (18568) wifi:<ba-add>idx:2 (ifx:1, 48:51:b7:21:4d:b4), tid:0, ssn:874, winSize:64[0m
+[0;33mW (18808) httpd_uri: httpd_uri: URI '/favicon.ico' not found[0m
+[0;33mW (18808) httpd_txrx: httpd_resp_send_err: 404 Not Found - Nothing matches the given URI[0m
+[0;32mI (41458) wifi:station: 48:51:b7:21:4d:b4 leave, AID = 1, reason = 2, bss_flags is 756835, bss:0x3ffb9b04[0m
+[0;32mI (41458) wifi:new:<1,0>, old:<1,1>, ap:<1,1>, sta:<255,255>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (41458) wifi:<ba-del>idx:2, tid:0[0m
+[0;32mI (41468) wifi:new:<1,1>, old:<1,0>, ap:<1,1>, sta:<255,255>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (41548) wifi:flush txq[0m
+[0;32mI (41548) wifi:stop sw txq[0m
+[0;32mI (41548) wifi:lmac stop hw txq[0m
+ets Jul 29 2019 12:21:46
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15916
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF v5.5.1 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Dec 30 2025 11:58:29[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.1[0m
+[0;32mI (33) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (44) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (51) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (64) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (77) boot: End of partition table[0m
+[0;32mI (80) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=2113ch (135484) map[0m
+[0;32mI (134) esp_image: segment 1: paddr=00031164 vaddr=3ffb0000 size=03f6ch ( 16236) load[0m
+[0;32mI (140) esp_image: segment 2: paddr=000350d8 vaddr=40080000 size=0af40h ( 44864) load[0m
+[0;32mI (158) esp_image: segment 3: paddr=00040020 vaddr=400d0020 size=a62f8h (680696) map[0m
+[0;32mI (391) esp_image: segment 4: paddr=000e6320 vaddr=4008af40 size=0f878h ( 63608) load[0m
+[0;32mI (416) esp_image: segment 5: paddr=000f5ba0 vaddr=50000000 size=00098h (   152) load[0m
+[0;32mI (429) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (429) boot: Disabling RNG early entropy source...[0m
+[0;32mI (440) cpu_start: Multicore app[0m
+[0;32mI (448) cpu_start: Pro cpu start user code[0m
+[0;32mI (448) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (448) app_init: Application information:[0m
+[0;32mI (448) app_init: Project name:     light_wifi_sensor[0m
+[0;32mI (453) app_init: App version:      89d52fe-dirty[0m
+[0;32mI (457) app_init: Compile time:     Dec 30 2025 11:58:00[0m
+[0;32mI (462) app_init: ELF file SHA256:  c52603034...[0m
+[0;32mI (467) app_init: ESP-IDF:          v5.5.1[0m
+[0;32mI (470) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (474) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (478) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (482) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (489) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (493) heap_init: At 3FFB8750 len 000278B0 (158 KiB): DRAM[0m
+[0;32mI (499) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (504) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (510) heap_init: At 4009A7B8 len 00005848 (22 KiB): IRAM[0m
+[0;33mW (516) spi_flash: Detected boya flash chip but using generic driver. For optimal functionality, enable `SPI_FLASH_SUPPORT_BOYA_CHIP` in menuconfig[0m
+[0;32mI (528) spi_flash: detected chip: generic[0m
+[0;32mI (532) spi_flash: flash io: dio[0m
+[0;33mW (534) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (547) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (557) main_task: Started on CPU0[0m
+[0;32mI (567) main_task: Calling app_main()[0m
+[0;32mI (597) MAIN_APP: Target Server URL: http://192.168.1.10:8000/api/sensor[0m
+[0;32mI (597) WIFI_PROV: Tim thay WiFi: B13 112. Dang ket noi...[0m
+[0;32mI (607) wifi:wifi driver task: 3ffc0fa4, prio:23, stack:6656, core=0[0m
+[0;32mI (617) wifi:wifi firmware version: 14da9b7[0m
+[0;32mI (617) wifi:wifi certification version: v7.0[0m
+[0;32mI (617) wifi:config NVS flash: enabled[0m
+[0;32mI (617) wifi:config nano formatting: disabled[0m
+[0;32mI (617) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (627) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (627) wifi:Init management short buffer num: 32[0m
+[0;32mI (637) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (637) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (637) wifi:Init static rx buffer num: 10[0m
+[0;32mI (647) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (647) wifi_init: rx ba win: 6[0m
+[0;32mI (647) wifi_init: accept mbox: 6[0m
+[0;32mI (657) wifi_init: tcpip mbox: 32[0m
+[0;32mI (657) wifi_init: udp mbox: 6[0m
+[0;32mI (657) wifi_init: tcp mbox: 6[0m
+[0;32mI (667) wifi_init: tcp tx win: 5760[0m
+[0;32mI (667) wifi_init: tcp rx win: 5760[0m
+[0;32mI (667) wifi_init: tcp mss: 1440[0m
+[0;32mI (677) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (677) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (677) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (717) phy_init: phy_version 4861,b71b5ad,Aug  5 2025,11:16:06[0m
+[0;32mI (797) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)[0m
+[0;32mI (817) wifi:mode : sta (5c:01:3b:9c:ce:d8)[0m
+[0;32mI (827) wifi:enable tsf[0m
+[0;32mI (827) MAIN_APP: Da co WiFi -> Bat dau do va gui du lieu...[0m
+[0;32mI (827) BH1750: BH1750 initialized[0m
+[0;32mI (827) main_task: Returned from app_main()[0m
+[0;32mI (827) MAIN_APP: Gia tri Lux: 0.00[0m
+[0;33mW (837) MAIN_APP: Mat WiFi (Lan 1)[0m
+[0;32mI (2317) wifi:new:<11,2>, old:<1,0>, ap:<255,255>, sta:<11,2>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (2317) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (3317) wifi:state: auth -> init (0x200)[0m
+[0;32mI (3327) wifi:new:<11,0>, old:<11,2>, ap:<255,255>, sta:<11,2>, prof:1, snd_ch_cfg:0x0[0m
+[0;33mW (3327) WIFI_PROV: Mat ket noi WiFi, thu lai...[0m
+[0;33mW (5747) WIFI_PROV: Mat ket noi WiFi, thu lai...[0m
+[0;32mI (5757) wifi:new:<11,2>, old:<11,0>, ap:<255,255>, sta:<11,2>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (5757) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (6767) wifi:state: auth -> init (0x200)[0m
+[0;32mI (6777) wifi:new:<11,0>, old:<11,2>, ap:<255,255>, sta:<11,2>, prof:1, snd_ch_cfg:0x0[0m
+[0;33mW (6777) WIFI_PROV: Mat ket noi WiFi, thu lai...[0m
+[0;33mW (9187) WIFI_PROV: Mat ket noi WiFi, thu lai...[0m
+[0;32mI (9207) wifi:new:<11,2>, old:<11,0>, ap:<255,255>, sta:<11,2>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (9207) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (10217) wifi:state: auth -> init (0x200)[0m
+[0;32mI (10227) wifi:new:<11,0>, old:<11,2>, ap:<255,255>, sta:<11,2>, prof:1, snd_ch_cfg:0x0[0m
+[0;33mW (10227) WIFI_PROV: Mat ket noi WiFi, thu lai...[0m
+[0;32mI (10837) MAIN_APP: Gia tri Lux: 755.83[0m
+[0;33mW (10837) MAIN_APP: Mat WiFi (Lan 2)[0m
+[0;33mW (12647) WIFI_PROV: Mat ket noi WiFi, thu lai...[0m
+[0;32mI (12657) wifi:new:<11,2>, old:<11,0>, ap:<255,255>, sta:<11,2>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (12657) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (12757) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (13757) wifi:state: assoc -> init (0x400)[0m
+[0;32mI (13767) wifi:new:<11,0>, old:<11,2>, ap:<255,255>, sta:<11,2>, prof:1, snd_ch_cfg:0x0[0m
+[0;33mW (13767) WIFI_PROV: Mat ket noi WiFi, thu lai...[0m
+[0;33mW (16177) WIFI_PROV: Mat ket noi WiFi, thu lai...[0m
+[0;32mI (16197) wifi:new:<11,2>, old:<11,0>, ap:<255,255>, sta:<11,2>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (16197) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (16237) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (16327) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (16447) wifi:connected with B13 112, aid = 9, channel 11, 40D, bssid = 10:39:4e:e7:86:c8[0m
+[0;32mI (16447) wifi:security: WPA2-PSK, phy: bgn, rssi: -58[0m
+[0;32mI (16467) wifi:pm start, type: 1[0m
+
+[0;32mI (16467) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (16467) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (17747) esp_netif_handlers: sta ip: 192.168.1.29, mask: 255.255.255.0, gw: 192.168.1.1[0m
+[0;32mI (17747) WIFI_PROV: Da co IP: 192.168.1.29[0m
+[0;32mI (20837) MAIN_APP: Gia tri Lux: 759.17[0m
+[0;32mI (21067) wifi:<ba-add>idx:0 (ifx:0, 10:39:4e:e7:86:c8), tid:0, ssn:4, winSize:64[0m
+[1;31mE (25847) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (25847) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (25847) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (25847) MAIN_APP: Loi gui HTTP: ESP_ERR_HTTP_CONNECT[0m
+[0;32mI (35857) MAIN_APP: Gia tri Lux: 753.33[0m
+[1;31mE (40867) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (40867) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (40867) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (40867) MAIN_APP: Loi gui HTTP: ESP_ERR_HTTP_CONNECT[0m
+[0;32mI (50867) MAIN_APP: Gia tri Lux: 665.00[0m
+[1;31mE (55877) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (55877) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (55877) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (55877) MAIN_APP: Loi gui HTTP: ESP_ERR_HTTP_CONNECT[0m
+[0;33mW (56597) MAIN_APP: Phat hien nhan nut! Giu 3s de Reset...[0m
+[0;32mI (65887) MAIN_APP: Gia tri Lux: 678.33[0m
+[0;33mW (67397) MAIN_APP: Phat hien nhan nut! Giu 3s de Reset...[0m
+[0;33mW (67997) MAIN_APP: Phat hien nhan nut! Giu 3s de Reset...[0m
+[0;33mW (68697) MAIN_APP: Phat hien nhan nut! Giu 3s de Reset...[0m
+[1;31mE (70897) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (70897) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (70897) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (70897) MAIN_APP: Loi gui HTTP: ESP_ERR_HTTP_CONNECT[0m
+[0;33mW (72197) MAIN_APP: Phat hien nhan nut! Giu 3s de Reset...[0m
+[1;31mE (75197) MAIN_APP: >>> FACTORY RESET: XOA TOAN BO CAU HINH <<<[0m
+[0;32mI (76327) wifi:state: run -> init (0x0)[0m
+[0;32mI (76327) wifi:pm stop, total sleep time: 52377991 us / 59860555 us[0m
+
+[0;32mI (76327) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (76327) wifi:new:<11,0>, old:<11,2>, ap:<255,255>, sta:<11,2>, prof:1, snd_ch_cfg:0x0[0m
+[0;33mW (76337) WIFI_PROV: Mat ket noi WiFi, thu lai...[0m
+[0;32mI (76417) wifi:flush txq[0m
+[0;32mI (76417) wifi:stop sw txq[0m
+[0;32mI (76417) wifi:lmac stop hw txq[0m
+ets Jul 29 2019 12:21:46
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15916
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF v5.5.1 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Dec 30 2025 11:58:29[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.1[0m
+[0;32mI (33) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (44) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (51) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (64) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (77) boot: End of partition table[0m
+[0;32mI (80) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=2113ch (135484) map[0m
+[0;32mI (134) esp_image: segment 1: paddr=00031164 vaddr=3ffb0000 size=03f6ch ( 16236) load[0m
+[0;32mI (140) esp_image: segment 2: paddr=000350d8 vaddr=40080000 size=0af40h ( 44864) load[0m
+[0;32mI (158) esp_image: segment 3: paddr=00040020 vaddr=400d0020 size=a62f8h (680696) map[0m
+[0;32mI (391) esp_image: segment 4: paddr=000e6320 vaddr=4008af40 size=0f878h ( 63608) load[0m
+[0;32mI (416) esp_image: segment 5: paddr=000f5ba0 vaddr=50000000 size=00098h (   152) load[0m
+[0;32mI (429) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (429) boot: Disabling RNG early entropy source...[0m
+[0;32mI (440) cpu_start: Multicore app[0m
+[0;32mI (448) cpu_start: Pro cpu start user code[0m
+[0;32mI (448) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (448) app_init: Application information:[0m
+[0;32mI (448) app_init: Project name:     light_wifi_sensor[0m
+[0;32mI (453) app_init: App version:      89d52fe-dirty[0m
+[0;32mI (457) app_init: Compile time:     Dec 30 2025 11:58:00[0m
+[0;32mI (462) app_init: ELF file SHA256:  c52603034...[0m
+[0;32mI (467) app_init: ESP-IDF:          v5.5.1[0m
+[0;32mI (470) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (474) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (478) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (482) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (489) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (493) heap_init: At 3FFB8750 len 000278B0 (158 KiB): DRAM[0m
+[0;32mI (499) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (504) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (510) heap_init: At 4009A7B8 len 00005848 (22 KiB): IRAM[0m
+[0;33mW (516) spi_flash: Detected boya flash chip but using generic driver. For optimal functionality, enable `SPI_FLASH_SUPPORT_BOYA_CHIP` in menuconfig[0m
+[0;32mI (528) spi_flash: detected chip: generic[0m
+[0;32mI (532) spi_flash: flash io: dio[0m
+[0;33mW (534) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (547) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (557) main_task: Started on CPU0[0m
+[0;32mI (567) main_task: Calling app_main()[0m
+[0;32mI (577) MAIN_APP: Target Server URL: http://192.168.1.10:8000/api/sensor[0m
+[0;33mW (577) MAIN_APP: Chua co WiFi -> Bat che do AP (Phat WiFi) de cau hinh...[0m
+[0;32mI (597) wifi:wifi driver task: 3ffc0ef0, prio:23, stack:6656, core=0[0m
+[0;32mI (597) wifi:wifi firmware version: 14da9b7[0m
+[0;32mI (597) wifi:wifi certification version: v7.0[0m
+[0;32mI (597) wifi:config NVS flash: enabled[0m
+[0;32mI (597) wifi:config nano formatting: disabled[0m
+[0;32mI (607) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (607) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (617) wifi:Init management short buffer num: 32[0m
+[0;32mI (617) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (617) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (627) wifi:Init static rx buffer num: 10[0m
+[0;32mI (627) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (637) wifi_init: rx ba win: 6[0m
+[0;32mI (637) wifi_init: accept mbox: 6[0m
+[0;32mI (637) wifi_init: tcpip mbox: 32[0m
+[0;32mI (637) wifi_init: udp mbox: 6[0m
+[0;32mI (647) wifi_init: tcp mbox: 6[0m
+[0;32mI (647) wifi_init: tcp tx win: 5760[0m
+[0;32mI (647) wifi_init: tcp rx win: 5760[0m
+[0;32mI (657) wifi_init: tcp mss: 1440[0m
+[0;32mI (657) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (657) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (927) phy_init: phy_version 4861,b71b5ad,Aug  5 2025,11:16:06[0m
+[0;33mW (937) phy_init: failed to load RF calibration data (0x1102), falling back to full calibration[0m
+[0;32mI (1007) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(2)[0m
+[0;32mI (1027) wifi:mode : softAP (5c:01:3b:9c:ce:d9)[0m
+[0;32mI (1027) wifi:Total power save buffer number: 16[0m
+[0;32mI (1027) wifi:Init max length of beacon: 752/752[0m
+[0;32mI (1027) wifi:Init max length of beacon: 752/752[0m
+[0;32mI (1037) WIFI_PROV: AP Started: ESP_Config[0m
+[0;32mI (1037) esp_netif_lwip: DHCP server started on interface WIFI_AP_DEF with IP: 192.168.4.1[0m
+[0;32mI (1047) main_task: Returned from app_main()[0m
+[0;32mI (10977) wifi:new:<1,1>, old:<1,1>, ap:<1,1>, sta:<255,255>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (10987) wifi:station: 48:51:b7:21:4d:b4 join, AID=1, bgn, 40U[0m
+[0;32mI (11157) esp_netif_lwip: DHCP server assigned IP to a client, IP is: 192.168.4.2[0m
+[0;32mI (16567) wifi:<ba-add>idx:2 (ifx:1, 48:51:b7:21:4d:b4), tid:0, ssn:374, winSize:64[0m
+[0;32mI (27097) wifi:station: 48:51:b7:21:4d:b4 leave, AID = 1, reason = 2, bss_flags is 756835, bss:0x3ffb9b04[0m
+[0;32mI (27097) wifi:new:<1,0>, old:<1,1>, ap:<1,1>, sta:<255,255>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (27097) wifi:<ba-del>idx:2, tid:0[0m
+[0;32mI (27107) wifi:new:<1,1>, old:<1,0>, ap:<1,1>, sta:<255,255>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (27187) wifi:flush txq[0m
+[0;32mI (27187) wifi:stop sw txq[0m
+[0;32mI (27187) wifi:lmac stop hw txq[0m
+ets Jul 29 2019 12:21:46
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15916
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF v5.5.1 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Dec 30 2025 11:58:29[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.1[0m
+[0;32mI (33) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (44) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (51) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (64) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (77) boot: End of partition table[0m
+[0;32mI (80) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=2113ch (135484) map[0m
+[0;32mI (134) esp_image: segment 1: paddr=00031164 vaddr=3ffb0000 size=03f6ch ( 16236) load[0m
+[0;32mI (140) esp_image: segment 2: paddr=000350d8 vaddr=40080000 size=0af40h ( 44864) load[0m
+[0;32mI (158) esp_image: segment 3: paddr=00040020 vaddr=400d0020 size=a62f8h (680696) map[0m
+[0;32mI (391) esp_image: segment 4: paddr=000e6320 vaddr=4008af40 size=0f878h ( 63608) load[0m
+[0;32mI (416) esp_image: segment 5: paddr=000f5ba0 vaddr=50000000 size=00098h (   152) load[0m
+[0;32mI (429) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (429) boot: Disabling RNG early entropy source...[0m
+[0;32mI (440) cpu_start: Multicore app[0m
+[0;32mI (448) cpu_start: Pro cpu start user code[0m
+[0;32mI (448) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (448) app_init: Application information:[0m
+[0;32mI (448) app_init: Project name:     light_wifi_sensor[0m
+[0;32mI (453) app_init: App version:      89d52fe-dirty[0m
+[0;32mI (457) app_init: Compile time:     Dec 30 2025 11:58:00[0m
+[0;32mI (462) app_init: ELF file SHA256:  c52603034...[0m
+[0;32mI (467) app_init: ESP-IDF:          v5.5.1[0m
+[0;32mI (470) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (474) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (478) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (482) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (489) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (493) heap_init: At 3FFB8750 len 000278B0 (158 KiB): DRAM[0m
+[0;32mI (499) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (504) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (510) heap_init: At 4009A7B8 len 00005848 (22 KiB): IRAM[0m
+[0;33mW (516) spi_flash: Detected boya flash chip but using generic driver. For optimal functionality, enable `SPI_FLASH_SUPPORT_BOYA_CHIP` in menuconfig[0m
+[0;32mI (528) spi_flash: detected chip: generic[0m
+[0;32mI (532) spi_flash: flash io: dio[0m
+[0;33mW (534) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (547) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (557) main_task: Started on CPU0[0m
+[0;32mI (567) main_task: Calling app_main()[0m
+[0;32mI (597) MAIN_APP: Target Server URL: http://192.168.1.20:8000/api/sensor[0m
+[0;32mI (597) WIFI_PROV: Tim thay WiFi: B13 112. Dang ket noi...[0m
+[0;32mI (607) wifi:wifi driver task: 3ffc0fa4, prio:23, stack:6656, core=0[0m
+[0;32mI (617) wifi:wifi firmware version: 14da9b7[0m
+[0;32mI (617) wifi:wifi certification version: v7.0[0m
+[0;32mI (617) wifi:config NVS flash: enabled[0m
+[0;32mI (617) wifi:config nano formatting: disabled[0m
+[0;32mI (617) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (627) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (627) wifi:Init management short buffer num: 32[0m
+[0;32mI (637) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (637) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (637) wifi:Init static rx buffer num: 10[0m
+[0;32mI (647) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (647) wifi_init: rx ba win: 6[0m
+[0;32mI (647) wifi_init: accept mbox: 6[0m
+[0;32mI (657) wifi_init: tcpip mbox: 32[0m
+[0;32mI (657) wifi_init: udp mbox: 6[0m
+[0;32mI (657) wifi_init: tcp mbox: 6[0m
+[0;32mI (667) wifi_init: tcp tx win: 5760[0m
+[0;32mI (667) wifi_init: tcp rx win: 5760[0m
+[0;32mI (667) wifi_init: tcp mss: 1440[0m
+[0;32mI (677) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (677) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (677) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (717) phy_init: phy_version 4861,b71b5ad,Aug  5 2025,11:16:06[0m
+[0;32mI (797) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)[0m
+[0;32mI (827) wifi:mode : sta (5c:01:3b:9c:ce:d8)[0m
+[0;32mI (837) wifi:enable tsf[0m
+[0;32mI (837) MAIN_APP: Da co WiFi -> Bat dau do va gui du lieu...[0m
+[0;32mI (837) BH1750: BH1750 initialized[0m
+[0;32mI (837) main_task: Returned from app_main()[0m
+[0;32mI (837) MAIN_APP: Gia tri Lux: 0.00[0m
+[0;33mW (847) MAIN_APP: Mat WiFi (Lan 1)[0m
+[0;32mI (2327) wifi:new:<11,2>, old:<1,0>, ap:<255,255>, sta:<11,2>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (2327) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (2377) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (2417) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (2567) wifi:connected with B13 112, aid = 9, channel 11, 40D, bssid = 10:39:4e:e7:86:c8[0m
+[0;32mI (2567) wifi:security: WPA2-PSK, phy: bgn, rssi: -60[0m
+[0;32mI (2597) wifi:pm start, type: 1[0m
+
+[0;32mI (2597) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (2637) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (3957) esp_netif_handlers: sta ip: 192.168.1.29, mask: 255.255.255.0, gw: 192.168.1.1[0m
+[0;32mI (3957) WIFI_PROV: Da co IP: 192.168.1.29[0m
+[0;32mI (10847) MAIN_APP: Gia tri Lux: 669.17[0m
+[0;32mI (11637) wifi:<ba-add>idx:0 (ifx:0, 10:39:4e:e7:86:c8), tid:0, ssn:5, winSize:64[0m
+[0;32mI (12127) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":669.17} | Status: 201[0m
+[0;32mI (22227) MAIN_APP: Gia tri Lux: 665.83[0m
+[0;32mI (22707) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":665.83} | Status: 201[0m
+[0;32mI (32807) MAIN_APP: Gia tri Lux: 663.33[0m
+[0;32mI (33127) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":663.33} | Status: 201[0m
+[0;32mI (43227) MAIN_APP: Gia tri Lux: 695.00[0m
+[0;32mI (43667) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":695.00} | Status: 201[0m
+[0;32mI (53777) MAIN_APP: Gia tri Lux: 641.67[0m
+[0;32mI (54097) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":641.67} | Status: 201[0m
+[0;32mI (64197) MAIN_APP: Gia tri Lux: 645.83[0m
+[0;32mI (64347) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":645.83} | Status: 201[0m
+[0;32mI (74447) MAIN_APP: Gia tri Lux: 645.83[0m
+[0;32mI (74597) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":645.83} | Status: 201[0m
+[0;32mI (84697) MAIN_APP: Gia tri Lux: 646.67[0m
+[0;32mI (85127) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":646.67} | Status: 201[0m
+[0;32mI (95227) MAIN_APP: Gia tri Lux: 648.33[0m
+[0;32mI (95637) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":648.33} | Status: 201[0m
+[0;32mI (105737) MAIN_APP: Gia tri Lux: 646.67[0m
+[0;32mI (106097) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":646.67} | Status: 201[0m
+[0;32mI (116197) MAIN_APP: Gia tri Lux: 649.17[0m
+[0;32mI (116607) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":649.17} | Status: 201[0m
+[0;32mI (126707) MAIN_APP: Gia tri Lux: 646.67[0m
+[0;32mI (126847) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":646.67} | Status: 201[0m
+[0;32mI (136947) MAIN_APP: Gia tri Lux: 648.33[0m
+[0;32mI (137117) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":648.33} | Status: 201[0m
+[0;32mI (147217) MAIN_APP: Gia tri Lux: 644.17[0m
+[0;32mI (147607) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":644.17} | Status: 201[0m
+[0;32mI (157707) MAIN_APP: Gia tri Lux: 635.83[0m
+[0;32mI (157847) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":635.83} | Status: 201[0m
+[0;32mI (167947) MAIN_APP: Gia tri Lux: 641.67[0m
+[0;32mI (168107) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":641.67} | Status: 201[0m
+[0;32mI (178207) MAIN_APP: Gia tri Lux: 642.50[0m
+[0;32mI (178377) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":642.50} | Status: 201[0m
+[0;32mI (188477) MAIN_APP: Gia tri Lux: 651.67[0m
+[0;32mI (188627) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":651.67} | Status: 201[0m
+[0;32mI (198727) MAIN_APP: Gia tri Lux: 653.33[0m
+[0;32mI (198867) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":653.33} | Status: 201[0m
+[0;32mI (208967) MAIN_APP: Gia tri Lux: 651.67[0m
+[0;32mI (209117) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":651.67} | Status: 201[0m
+[0;32mI (219217) MAIN_APP: Gia tri Lux: 652.50[0m
+[0;32mI (219627) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":652.50} | Status: 201[0m
+[0;32mI (229727) MAIN_APP: Gia tri Lux: 655.00[0m
+[0;32mI (229867) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":655.00} | Status: 201[0m
+[0;32mI (239967) MAIN_APP: Gia tri Lux: 645.00[0m
+[0;32mI (240367) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":645.00} | Status: 201[0m
+[0;32mI (250477) MAIN_APP: Gia tri Lux: 646.67[0m
+[0;32mI (250617) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":646.67} | Status: 201[0m
+[0;32mI (260717) MAIN_APP: Gia tri Lux: 653.33[0m
+[0;32mI (260867) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":653.33} | Status: 201[0m
+[0;32mI (270967) MAIN_APP: Gia tri Lux: 651.67[0m
+[0;32mI (271127) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":651.67} | Status: 201[0m
+[0;32mI (281227) MAIN_APP: Gia tri Lux: 649.17[0m
+[0;32mI (281367) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":649.17} | Status: 201[0m
+[0;32mI (291467) MAIN_APP: Gia tri Lux: 652.50[0m
+[0;32mI (291617) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":652.50} | Status: 201[0m
+[0;32mI (301717) MAIN_APP: Gia tri Lux: 650.83[0m
+[0;32mI (302127) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":650.83} | Status: 201[0m
+[0;32mI (312227) MAIN_APP: Gia tri Lux: 655.83[0m
+[0;32mI (312637) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":655.83} | Status: 201[0m
+[0;32mI (322737) MAIN_APP: Gia tri Lux: 651.67[0m
+[0;32mI (323137) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":651.67} | Status: 201[0m
+[0;32mI (333237) MAIN_APP: Gia tri Lux: 652.50[0m
+[0;32mI (333627) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":652.50} | Status: 201[0m
+[0;32mI (343727) MAIN_APP: Gia tri Lux: 651.67[0m
+[0;32mI (344237) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":651.67} | Status: 201[0m
+[0;32mI (354337) MAIN_APP: Gia tri Lux: 635.83[0m
+[0;32mI (354657) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":635.83} | Status: 201[0m
+[0;32mI (364757) MAIN_APP: Gia tri Lux: 655.83[0m
+[0;32mI (365237) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":655.83} | Status: 201[0m
+[0;32mI (375337) MAIN_APP: Gia tri Lux: 649.17[0m
+[0;32mI (375657) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":649.17} | Status: 201[0m
+[0;32mI (385757) MAIN_APP: Gia tri Lux: 654.17[0m
+[0;32mI (386197) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":654.17} | Status: 201[0m
+[0;32mI (396297) MAIN_APP: Gia tri Lux: 647.50[0m
+[0;32mI (396627) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":647.50} | Status: 201[0m
+[0;32mI (406727) MAIN_APP: Gia tri Lux: 655.00[0m
+[0;32mI (407137) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":655.00} | Status: 201[0m
+[0;32mI (417237) MAIN_APP: Gia tri Lux: 657.50[0m
+[0;32mI (417377) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":657.50} | Status: 201[0m
+[0;32mI (427477) MAIN_APP: Gia tri Lux: 650.83[0m
+[0;32mI (428007) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":650.83} | Status: 201[0m
+[0;32mI (438107) MAIN_APP: Gia tri Lux: 652.50[0m
+[0;32mI (438417) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":652.50} | Status: 201[0m
+[0;32mI (448517) MAIN_APP: Gia tri Lux: 651.67[0m
+[0;32mI (448997) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":651.67} | Status: 201[0m
+[0;32mI (459097) MAIN_APP: Gia tri Lux: 652.50[0m
+[0;32mI (459377) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":652.50} | Status: 201[0m
+[0;32mI (469477) MAIN_APP: Gia tri Lux: 655.83[0m
+[0;32mI (469987) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":655.83} | Status: 201[0m
+[0;32mI (480087) MAIN_APP: Gia tri Lux: 654.17[0m
+[0;32mI (480637) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":654.17} | Status: 201[0m
+[0;32mI (490737) MAIN_APP: Gia tri Lux: 654.17[0m
+[0;32mI (490887) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":654.17} | Status: 201[0m
+[0;32mI (500987) MAIN_APP: Gia tri Lux: 648.33[0m
+[0;32mI (501667) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":648.33} | Status: 201[0m
+[0;32mI (511767) MAIN_APP: Gia tri Lux: 652.50[0m
+[0;32mI (512137) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":652.50} | Status: 201[0m
+[0;32mI (522237) MAIN_APP: Gia tri Lux: 652.50[0m
+[0;32mI (522407) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":652.50} | Status: 201[0m
+[0;32mI (532507) MAIN_APP: Gia tri Lux: 654.17[0m
+[0;32mI (532897) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":654.17} | Status: 201[0m
+[0;32mI (542997) MAIN_APP: Gia tri Lux: 650.83[0m
+[0;32mI (543127) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":650.83} | Status: 201[0m
+[0;32mI (553227) MAIN_APP: Gia tri Lux: 652.50[0m
+[0;32mI (553377) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":652.50} | Status: 201[0m
+[0;32mI (563477) MAIN_APP: Gia tri Lux: 655.83[0m
+[0;32mI (563627) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":655.83} | Status: 201[0m
+[0;32mI (573727) MAIN_APP: Gia tri Lux: 648.33[0m
+[0;32mI (574137) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":648.33} | Status: 201[0m
+[0;32mI (584237) MAIN_APP: Gia tri Lux: 656.67[0m
+[0;32mI (584377) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":656.67} | Status: 201[0m
+[0;32mI (594477) MAIN_APP: Gia tri Lux: 655.00[0m
+[0;32mI (594637) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":655.00} | Status: 201[0m
+[0;32mI (604737) MAIN_APP: Gia tri Lux: 651.67[0m
+[0;32mI (604877) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":651.67} | Status: 201[0m
+[0;32mI (614977) MAIN_APP: Gia tri Lux: 649.17[0m
+[0;32mI (615127) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":649.17} | Status: 201[0m
+[0;32mI (625227) MAIN_APP: Gia tri Lux: 655.00[0m
+[0;32mI (625387) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":655.00} | Status: 201[0m
+[0;32mI (635487) MAIN_APP: Gia tri Lux: 650.00[0m
+[0;32mI (635647) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":650.00} | Status: 201[0m
+[0;32mI (645747) MAIN_APP: Gia tri Lux: 652.50[0m
+[0;32mI (646137) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":652.50} | Status: 201[0m
+[0;32mI (656237) MAIN_APP: Gia tri Lux: 648.33[0m
+[0;32mI (656377) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":648.33} | Status: 201[0m
+[0;32mI (666477) MAIN_APP: Gia tri Lux: 645.83[0m
+[0;32mI (666637) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":645.83} | Status: 201[0m
+[0;32mI (676737) MAIN_APP: Gia tri Lux: 646.67[0m
+[0;32mI (677137) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":646.67} | Status: 201[0m
+[0;32mI (687237) MAIN_APP: Gia tri Lux: 649.17[0m
+[0;32mI (687627) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":649.17} | Status: 201[0m
+[0;32mI (697727) MAIN_APP: Gia tri Lux: 650.83[0m
+[0;32mI (697877) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":650.83} | Status: 201[0m
+[0;32mI (707977) MAIN_APP: Gia tri Lux: 650.00[0m
+[0;32mI (708377) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":650.00} | Status: 201[0m
+[0;32mI (718477) MAIN_APP: Gia tri Lux: 651.67[0m
+[0;32mI (718637) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":651.67} | Status: 201[0m
+[0;32mI (728737) MAIN_APP: Gia tri Lux: 650.00[0m
+[0;32mI (728877) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":650.00} | Status: 201[0m
+[0;32mI (738987) MAIN_APP: Gia tri Lux: 646.67[0m
+[0;32mI (739377) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":646.67} | Status: 201[0m
+[0;32mI (749487) MAIN_APP: Gia tri Lux: 650.00[0m
+[0;32mI (749887) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":650.00} | Status: 201[0m
+[0;32mI (759987) MAIN_APP: Gia tri Lux: 645.00[0m
+[0;32mI (760127) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":645.00} | Status: 201[0m
+[0;32mI (770227) MAIN_APP: Gia tri Lux: 648.33[0m
+[0;32mI (770677) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":648.33} | Status: 201[0m
+[0;32mI (780777) MAIN_APP: Gia tri Lux: 648.33[0m
+[0;32mI (781137) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":648.33} | Status: 201[0m
+[0;32mI (791237) MAIN_APP: Gia tri Lux: 645.00[0m
+[0;32mI (791387) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":645.00} | Status: 201[0m
+[0;32mI (801487) MAIN_APP: Gia tri Lux: 650.00[0m
+[0;32mI (801627) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":650.00} | Status: 201[0m
+[0;32mI (811727) MAIN_APP: Gia tri Lux: 645.83[0m
+[0;32mI (812127) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":645.83} | Status: 201[0m
+[0;32mI (822227) MAIN_APP: Gia tri Lux: 644.17[0m
+[0;32mI (822627) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":644.17} | Status: 201[0m
+[0;32mI (832727) MAIN_APP: Gia tri Lux: 650.00[0m
+[0;32mI (833167) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":650.00} | Status: 201[0m
+[0;32mI (843267) MAIN_APP: Gia tri Lux: 650.00[0m
+[0;32mI (843377) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":650.00} | Status: 201[0m
+[0;32mI (853477) MAIN_APP: Gia tri Lux: 646.67[0m
+[0;32mI (853987) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":646.67} | Status: 201[0m
+[0;32mI (864087) MAIN_APP: Gia tri Lux: 655.00[0m
+[0;32mI (864377) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":655.00} | Status: 201[0m
+[0;32mI (874477) MAIN_APP: Gia tri Lux: 646.67[0m
+[0;32mI (874637) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":646.67} | Status: 201[0m
+[0;32mI (884737) MAIN_APP: Gia tri Lux: 648.33[0m
+[0;32mI (884877) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":648.33} | Status: 201[0m
+[0;32mI (894977) MAIN_APP: Gia tri Lux: 647.50[0m
+[0;32mI (895387) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":647.50} | Status: 201[0m
+[0;32mI (905487) MAIN_APP: Gia tri Lux: 646.67[0m
+[0;32mI (905667) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":646.67} | Status: 201[0m
+[0;32mI (915767) MAIN_APP: Gia tri Lux: 646.67[0m
+[0;32mI (915877) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":646.67} | Status: 201[0m
+[0;32mI (925977) MAIN_APP: Gia tri Lux: 648.33[0m
+[0;32mI (926487) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":648.33} | Status: 201[0m
+[0;32mI (936587) MAIN_APP: Gia tri Lux: 655.00[0m
+[0;32mI (936877) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":655.00} | Status: 201[0m
+[0;32mI (946977) MAIN_APP: Gia tri Lux: 645.00[0m
+[0;32mI (947387) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":645.00} | Status: 201[0m
+[0;32mI (957487) MAIN_APP: Gia tri Lux: 649.17[0m
+[0;32mI (957887) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":649.17} | Status: 201[0m
+[0;32mI (967997) MAIN_APP: Gia tri Lux: 648.33[0m
+[0;32mI (968377) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":648.33} | Status: 201[0m
+[0;32mI (978477) MAIN_APP: Gia tri Lux: 646.67[0m
+[0;32mI (978877) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":646.67} | Status: 201[0m
+[0;32mI (988977) MAIN_APP: Gia tri Lux: 644.17[0m
+[0;32mI (989377) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":644.17} | Status: 201[0m
+[0;32mI (999477) MAIN_APP: Gia tri Lux: 649.17[0m
+[0;32mI (999877) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":649.17} | Status: 201[0m
+[0;32mI (1009977) MAIN_APP: Gia tri Lux: 655.83[0m
+[0;32mI (1010137) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":655.83} | Status: 201[0m
+[0;32mI (1020237) MAIN_APP: Gia tri Lux: 644.17[0m
+[0;32mI (1020637) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":644.17} | Status: 201[0m
+[0;32mI (1030737) MAIN_APP: Gia tri Lux: 645.83[0m
+[0;32mI (1031147) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":645.83} | Status: 201[0m
+[0;32mI (1041247) MAIN_APP: Gia tri Lux: 646.67[0m
+[0;32mI (1041637) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":646.67} | Status: 201[0m
+[0;32mI (1051737) MAIN_APP: Gia tri Lux: 645.83[0m
+[0;32mI (1051877) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":645.83} | Status: 201[0m
+[0;32mI (1061977) MAIN_APP: Gia tri Lux: 649.17[0m
+[0;32mI (1062377) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":649.17} | Status: 201[0m
+[0;32mI (1072477) MAIN_APP: Gia tri Lux: 635.83[0m
+[0;32mI (1072637) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":635.83} | Status: 201[0m
+[0;32mI (1082737) MAIN_APP: Gia tri Lux: 633.33[0m
+[0;32mI (1082877) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":633.33} | Status: 201[0m
+[0;32mI (1092977) MAIN_APP: Gia tri Lux: 641.67[0m
+[0;32mI (1093127) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":641.67} | Status: 201[0m
+[0;32mI (1103227) MAIN_APP: Gia tri Lux: 644.17[0m
+[0;32mI (1103377) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":644.17} | Status: 201[0m
+[0;32mI (1113477) MAIN_APP: Gia tri Lux: 650.83[0m
+[0;32mI (1113877) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":650.83} | Status: 201[0m
+[0;32mI (1123977) MAIN_APP: Gia tri Lux: 650.83[0m
+[0;32mI (1124127) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":650.83} | Status: 201[0m
+[0;32mI (1134227) MAIN_APP: Gia tri Lux: 650.00[0m
+[0;32mI (1134377) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":650.00} | Status: 201[0m
+[0;32mI (1144477) MAIN_APP: Gia tri Lux: 653.33[0m
+[0;32mI (1144877) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":653.33} | Status: 201[0m
+[0;32mI (1154977) MAIN_APP: Gia tri Lux: 650.83[0m
+[0;32mI (1155137) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":650.83} | Status: 201[0m
+[0;32mI (1165247) MAIN_APP: Gia tri Lux: 653.33[0m
+[0;32mI (1165387) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":653.33} | Status: 201[0m
+[0;32mI (1175487) MAIN_APP: Gia tri Lux: 653.33[0m
+[0;32mI (1175627) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":653.33} | Status: 201[0m
+[0;32mI (1185727) MAIN_APP: Gia tri Lux: 653.33[0m
+[0;32mI (1185887) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":653.33} | Status: 201[0m
+[0;32mI (1195987) MAIN_APP: Gia tri Lux: 643.33[0m
+[0;32mI (1196377) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":643.33} | Status: 201[0m
+[0;32mI (1206477) MAIN_APP: Gia tri Lux: 648.33[0m
+[0;32mI (1206887) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":648.33} | Status: 201[0m
+[0;32mI (1216987) MAIN_APP: Gia tri Lux: 646.67[0m
+[0;32mI (1217197) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":646.67} | Status: 201[0m
+[0;32mI (1227297) MAIN_APP: Gia tri Lux: 645.00[0m
+[0;32mI (1227647) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":645.00} | Status: 201[0m
+[0;32mI (1237747) MAIN_APP: Gia tri Lux: 635.00[0m
+[0;32mI (1238127) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":635.00} | Status: 201[0m
+[0;32mI (1248227) MAIN_APP: Gia tri Lux: 633.33[0m
+[0;32mI (1248387) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":633.33} | Status: 201[0m
+[0;32mI (1258487) MAIN_APP: Gia tri Lux: 632.50[0m
+[0;32mI (1258877) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":632.50} | Status: 201[0m
+[0;32mI (1268987) MAIN_APP: Gia tri Lux: 636.67[0m
+[0;32mI (1269147) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":636.67} | Status: 201[0m
+[0;32mI (1279247) MAIN_APP: Gia tri Lux: 635.00[0m
+[0;32mI (1279627) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":635.00} | Status: 201[0m
+[0;32mI (1289727) MAIN_APP: Gia tri Lux: 635.83[0m
+[0;32mI (1289897) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":635.83} | Status: 201[0m
+[0;32mI (1299997) MAIN_APP: Gia tri Lux: 636.67[0m
+[0;32mI (1300137) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":636.67} | Status: 201[0m
+[0;32mI (1310237) MAIN_APP: Gia tri Lux: 637.50[0m
+[0;32mI (1310387) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":637.50} | Status: 201[0m
+[0;32mI (1320487) MAIN_APP: Gia tri Lux: 637.50[0m
+[0;32mI (1320887) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":637.50} | Status: 201[0m
+[0;32mI (1330997) MAIN_APP: Gia tri Lux: 639.17[0m
+[0;32mI (1331137) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":639.17} | Status: 201[0m
+[0;32mI (1341237) MAIN_APP: Gia tri Lux: 635.83[0m
+[0;32mI (1341507) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":635.83} | Status: 201[0m
+[0;32mI (1351607) MAIN_APP: Gia tri Lux: 635.83[0m
+[0;32mI (1351877) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":635.83} | Status: 201[0m
+[0;32mI (1361977) MAIN_APP: Gia tri Lux: 632.50[0m
+[0;32mI (1362377) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":632.50} | Status: 201[0m
+[0;32mI (1372477) MAIN_APP: Gia tri Lux: 630.83[0m
+[0;32mI (1372647) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":630.83} | Status: 201[0m
+[0;32mI (1382747) MAIN_APP: Gia tri Lux: 632.50[0m
+[0;32mI (1382887) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":632.50} | Status: 201[0m
+[0;32mI (1392987) MAIN_APP: Gia tri Lux: 641.67[0m
+[0;32mI (1393377) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":641.67} | Status: 201[0m
+[0;32mI (1403477) MAIN_APP: Gia tri Lux: 643.33[0m
+[0;32mI (1403977) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":643.33} | Status: 201[0m
+[0;32mI (1414077) MAIN_APP: Gia tri Lux: 643.33[0m
+[0;32mI (1414377) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":643.33} | Status: 201[0m
+[0;32mI (1424487) MAIN_APP: Gia tri Lux: 645.00[0m
+[0;32mI (1424877) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":645.00} | Status: 201[0m
+[0;32mI (1434977) MAIN_APP: Gia tri Lux: 635.83[0m
+[0;32mI (1435377) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":635.83} | Status: 201[0m
+[0;32mI (1445477) MAIN_APP: Gia tri Lux: 638.33[0m
+[0;32mI (1445877) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":638.33} | Status: 201[0m
+[0;32mI (1455977) MAIN_APP: Gia tri Lux: 635.00[0m
+[0;32mI (1456507) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":635.00} | Status: 201[0m
+[0;32mI (1466607) MAIN_APP: Gia tri Lux: 636.67[0m
+[0;32mI (1466917) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":636.67} | Status: 201[0m
+[0;32mI (1477017) MAIN_APP: Gia tri Lux: 638.33[0m
+[0;32mI (1477377) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":638.33} | Status: 201[0m
+[0;32mI (1487477) MAIN_APP: Gia tri Lux: 642.50[0m
+[0;32mI (1487877) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":642.50} | Status: 201[0m
+[0;32mI (1497987) MAIN_APP: Gia tri Lux: 646.67[0m
+[0;32mI (1498487) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":646.67} | Status: 201[0m
+[0;32mI (1508587) MAIN_APP: Gia tri Lux: 645.00[0m
+[0;32mI (1508907) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":645.00} | Status: 201[0m
+[0;32mI (1519007) MAIN_APP: Gia tri Lux: 649.17[0m
+[0;32mI (1519127) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":649.17} | Status: 201[0m
+[0;32mI (1529227) MAIN_APP: Gia tri Lux: 651.67[0m
+[0;32mI (1529377) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":651.67} | Status: 201[0m
+[0;32mI (1539477) MAIN_APP: Gia tri Lux: 646.67[0m
+[0;32mI (1539927) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":646.67} | Status: 201[0m
+[0;32mI (1550027) MAIN_APP: Gia tri Lux: 647.50[0m
+[0;32mI (1550377) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":647.50} | Status: 201[0m
+[0;32mI (1560477) MAIN_APP: Gia tri Lux: 647.50[0m
+[0;32mI (1560627) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":647.50} | Status: 201[0m
+[0;32mI (1570737) MAIN_APP: Gia tri Lux: 645.83[0m
+[0;32mI (1571127) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":645.83} | Status: 201[0m
+[0;32mI (1581227) MAIN_APP: Gia tri Lux: 646.67[0m
+[0;32mI (1581377) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":646.67} | Status: 201[0m
+[0;32mI (1591477) MAIN_APP: Gia tri Lux: 646.67[0m
+[0;32mI (1591887) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":646.67} | Status: 201[0m
+[0;32mI (1601987) MAIN_APP: Gia tri Lux: 649.17[0m
+[0;32mI (1602127) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":649.17} | Status: 201[0m
+[0;32mI (1612237) MAIN_APP: Gia tri Lux: 644.17[0m
+[0;32mI (1612627) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":644.17} | Status: 201[0m
+[0;32mI (1622737) MAIN_APP: Gia tri Lux: 645.00[0m
+[0;32mI (1622877) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":645.00} | Status: 201[0m
+[0;32mI (1632977) MAIN_APP: Gia tri Lux: 646.67[0m
+[0;32mI (1633127) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":646.67} | Status: 201[0m
+[0;32mI (1643237) MAIN_APP: Gia tri Lux: 650.00[0m
+[0;32mI (1643487) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":650.00} | Status: 201[0m
+[0;32mI (1653587) MAIN_APP: Gia tri Lux: 637.50[0m
+[0;32mI (1653897) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":637.50} | Status: 201[0m
+[0;32mI (1663997) MAIN_APP: Gia tri Lux: 638.33[0m
+[0;32mI (1664457) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":638.33} | Status: 201[0m
+[0;32mI (1674557) MAIN_APP: Gia tri Lux: 642.50[0m
+[0;32mI (1674887) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":642.50} | Status: 201[0m
+[0;32mI (1684987) MAIN_APP: Gia tri Lux: 639.17[0m
+[0;32mI (1685397) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":639.17} | Status: 201[0m
+[0;32mI (1695497) MAIN_APP: Gia tri Lux: 623.33[0m
+[0;32mI (1695637) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":623.33} | Status: 201[0m
+[0;32mI (1705737) MAIN_APP: Gia tri Lux: 626.67[0m
+[0;32mI (1705877) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":626.67} | Status: 201[0m
+[0;32mI (1715987) MAIN_APP: Gia tri Lux: 630.00[0m
+[0;32mI (1716137) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":630.00} | Status: 201[0m
+[0;32mI (1726237) MAIN_APP: Gia tri Lux: 641.67[0m
+[0;32mI (1726637) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":641.67} | Status: 201[0m
+[0;32mI (1736737) MAIN_APP: Gia tri Lux: 641.67[0m
+[0;32mI (1737127) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":641.67} | Status: 201[0m
+[0;32mI (1747237) MAIN_APP: Gia tri Lux: 646.67[0m
+[0;32mI (1747387) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":646.67} | Status: 201[0m
+[0;32mI (1757487) MAIN_APP: Gia tri Lux: 642.50[0m
+[0;32mI (1757627) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":642.50} | Status: 201[0m
+[0;32mI (1767727) MAIN_APP: Gia tri Lux: 642.50[0m
+[0;32mI (1768137) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":642.50} | Status: 201[0m
+[0;32mI (1778237) MAIN_APP: Gia tri Lux: 635.00[0m
+[0;32mI (1778387) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":635.00} | Status: 201[0m
+[0;32mI (1788487) MAIN_APP: Gia tri Lux: 636.67[0m
+[0;32mI (1788897) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":636.67} | Status: 201[0m
+[0;32mI (1798997) MAIN_APP: Gia tri Lux: 641.67[0m
+[0;32mI (1799397) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":641.67} | Status: 201[0m
+[0;32mI (1809497) MAIN_APP: Gia tri Lux: 637.50[0m
+[0;32mI (1809887) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":637.50} | Status: 201[0m
+[0;32mI (1819987) MAIN_APP: Gia tri Lux: 646.67[0m
+[0;32mI (1820127) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":646.67} | Status: 201[0m
+[0;32mI (1830237) MAIN_APP: Gia tri Lux: 620.00[0m
+[0;32mI (1830627) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":620.00} | Status: 201[0m
+[0;32mI (1840727) MAIN_APP: Gia tri Lux: 602.50[0m
+[0;32mI (1841127) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":602.50} | Status: 201[0m
+[0;32mI (1851227) MAIN_APP: Gia tri Lux: 599.17[0m
+[0;32mI (1851387) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":599.17} | Status: 201[0m
+[0;32mI (1861487) MAIN_APP: Gia tri Lux: 595.00[0m
+[0;32mI (1861877) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":595.00} | Status: 201[0m
+[0;32mI (1871977) MAIN_APP: Gia tri Lux: 595.00[0m
+[0;32mI (1872397) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":595.00} | Status: 201[0m
+[0;32mI (1882497) MAIN_APP: Gia tri Lux: 593.33[0m
+[0;32mI (1882627) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":593.33} | Status: 201[0m
+[0;32mI (1892727) MAIN_APP: Gia tri Lux: 594.17[0m
+[0;32mI (1893137) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":594.17} | Status: 201[0m
+[0;32mI (1903237) MAIN_APP: Gia tri Lux: 595.00[0m
+[0;32mI (1903647) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":595.00} | Status: 201[0m
+[0;32mI (1913747) MAIN_APP: Gia tri Lux: 596.67[0m
+[0;32mI (1914127) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":596.67} | Status: 201[0m
+[0;32mI (1924227) MAIN_APP: Gia tri Lux: 597.50[0m
+[0;32mI (1924377) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":597.50} | Status: 201[0m
+[0;32mI (1934477) MAIN_APP: Gia tri Lux: 595.00[0m
+[0;32mI (1934877) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":595.00} | Status: 201[0m
+[0;32mI (1944977) MAIN_APP: Gia tri Lux: 591.67[0m
+[0;32mI (1945127) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":591.67} | Status: 201[0m
+[0;32mI (1955227) MAIN_APP: Gia tri Lux: 595.83[0m
+[0;32mI (1955387) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":595.83} | Status: 201[0m
+[0;32mI (1965487) MAIN_APP: Gia tri Lux: 596.67[0m
+[0;32mI (1965907) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":596.67} | Status: 201[0m
+[0;32mI (1976007) MAIN_APP: Gia tri Lux: 593.33[0m
+[0;32mI (1976487) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":593.33} | Status: 201[0m
+[0;32mI (1986587) MAIN_APP: Gia tri Lux: 593.33[0m
+[0;32mI (1986897) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":593.33} | Status: 201[0m
+[0;32mI (1997007) MAIN_APP: Gia tri Lux: 594.17[0m
+[0;32mI (1997477) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":594.17} | Status: 201[0m
+[0;32mI (2007577) MAIN_APP: Gia tri Lux: 592.50[0m
+[0;32mI (2007877) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":592.50} | Status: 201[0m
+[0;32mI (2017977) MAIN_APP: Gia tri Lux: 579.17[0m
+[0;32mI (2018377) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":579.17} | Status: 201[0m
+[0;32mI (2028477) MAIN_APP: Gia tri Lux: 580.83[0m
+[0;32mI (2028627) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":580.83} | Status: 201[0m
+[0;32mI (2038727) MAIN_APP: Gia tri Lux: 580.83[0m
+[0;32mI (2038887) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":580.83} | Status: 201[0m
+[0;32mI (2048987) MAIN_APP: Gia tri Lux: 584.17[0m
+[0;32mI (2049137) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":584.17} | Status: 201[0m
+[0;32mI (2059237) MAIN_APP: Gia tri Lux: 582.50[0m
+[0;32mI (2059637) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":582.50} | Status: 201[0m
+[0;32mI (2069737) MAIN_APP: Gia tri Lux: 582.50[0m
+[0;32mI (2070137) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":582.50} | Status: 201[0m
+[0;32mI (2080237) MAIN_APP: Gia tri Lux: 583.33[0m
+[0;32mI (2080637) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":583.33} | Status: 201[0m
+[0;32mI (2090737) MAIN_APP: Gia tri Lux: 583.33[0m
+[0;32mI (2090877) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":583.33} | Status: 201[0m
+[0;32mI (2100977) MAIN_APP: Gia tri Lux: 583.33[0m
+[0;32mI (2101387) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":583.33} | Status: 201[0m
+[0;32mI (2111487) MAIN_APP: Gia tri Lux: 580.00[0m
+[0;32mI (2111887) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":580.00} | Status: 201[0m
+[0;32mI (2121987) MAIN_APP: Gia tri Lux: 582.50[0m
+[0;32mI (2122407) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":582.50} | Status: 201[0m
+[0;32mI (2132507) MAIN_APP: Gia tri Lux: 585.00[0m
+[0;32mI (2132887) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":585.00} | Status: 201[0m
+[0;32mI (2142987) MAIN_APP: Gia tri Lux: 581.67[0m
+[0;32mI (2143137) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":581.67} | Status: 201[0m
+[0;32mI (2153237) MAIN_APP: Gia tri Lux: 580.83[0m
+[0;32mI (2153377) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":580.83} | Status: 201[0m
+[0;32mI (2163477) MAIN_APP: Gia tri Lux: 582.50[0m
+[0;32mI (2163887) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":582.50} | Status: 201[0m
+[0;32mI (2173987) MAIN_APP: Gia tri Lux: 584.17[0m
+[0;32mI (2174127) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":584.17} | Status: 201[0m
+[0;32mI (2184227) MAIN_APP: Gia tri Lux: 583.33[0m
+[0;32mI (2184377) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":583.33} | Status: 201[0m
+[0;32mI (2194477) MAIN_APP: Gia tri Lux: 588.33[0m
+[0;32mI (2194637) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":588.33} | Status: 201[0m
+[0;32mI (2204737) MAIN_APP: Gia tri Lux: 582.50[0m
+[0;32mI (2205147) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":582.50} | Status: 201[0m
+[0;32mI (2215247) MAIN_APP: Gia tri Lux: 589.17[0m
+[0;32mI (2215627) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":589.17} | Status: 201[0m
+[0;32mI (2225727) MAIN_APP: Gia tri Lux: 585.00[0m
+[0;32mI (2226137) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":585.00} | Status: 201[0m
+[0;32mI (2236247) MAIN_APP: Gia tri Lux: 582.50[0m
+[0;32mI (2236647) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":582.50} | Status: 201[0m
+[0;32mI (2246747) MAIN_APP: Gia tri Lux: 579.17[0m
+[0;32mI (2247137) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":579.17} | Status: 201[0m
+[0;32mI (2257237) MAIN_APP: Gia tri Lux: 589.17[0m
+[0;32mI (2257377) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":589.17} | Status: 201[0m
+[0;32mI (2267477) MAIN_APP: Gia tri Lux: 588.33[0m
+[0;32mI (2267627) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":588.33} | Status: 201[0m
+[0;32mI (2277727) MAIN_APP: Gia tri Lux: 589.17[0m
+[0;32mI (2278127) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":589.17} | Status: 201[0m
+[0;32mI (2288227) MAIN_APP: Gia tri Lux: 588.33[0m
+[0;32mI (2288647) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":588.33} | Status: 201[0m
+[0;32mI (2298747) MAIN_APP: Gia tri Lux: 590.83[0m
+[0;32mI (2299127) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":590.83} | Status: 201[0m
+[0;32mI (2309227) MAIN_APP: Gia tri Lux: 577.50[0m
+[0;32mI (2309387) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":577.50} | Status: 201[0m
+[0;32mI (2319487) MAIN_APP: Gia tri Lux: 590.00[0m
+[0;32mI (2319627) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":590.00} | Status: 201[0m
+[0;32mI (2329727) MAIN_APP: Gia tri Lux: 588.33[0m
+[0;32mI (2329877) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":588.33} | Status: 201[0m
+[0;32mI (2339987) MAIN_APP: Gia tri Lux: 588.33[0m
+[0;32mI (2340127) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":588.33} | Status: 201[0m
+[0;32mI (2350227) MAIN_APP: Gia tri Lux: 585.00[0m
+[0;32mI (2350397) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":585.00} | Status: 201[0m
+[0;32mI (2360497) MAIN_APP: Gia tri Lux: 585.83[0m
+[0;32mI (2360627) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":585.83} | Status: 201[0m
+[0;32mI (2370727) MAIN_APP: Gia tri Lux: 584.17[0m
+[0;32mI (2371137) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":584.17} | Status: 201[0m
+[0;32mI (2381237) MAIN_APP: Gia tri Lux: 581.67[0m
+[0;32mI (2381637) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":581.67} | Status: 201[0m
+[0;32mI (2391737) MAIN_APP: Gia tri Lux: 581.67[0m
+[0;32mI (2392137) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":581.67} | Status: 201[0m
+[0;32mI (2402237) MAIN_APP: Gia tri Lux: 583.33[0m
+[0;32mI (2402647) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":583.33} | Status: 201[0m
+[0;32mI (2412747) MAIN_APP: Gia tri Lux: 580.83[0m
+[0;32mI (2413137) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":580.83} | Status: 201[0m
+[0;32mI (2423237) MAIN_APP: Gia tri Lux: 580.00[0m
+[0;32mI (2423627) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":580.00} | Status: 201[0m
+[0;32mI (2433727) MAIN_APP: Gia tri Lux: 581.67[0m
+[0;32mI (2434127) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":581.67} | Status: 201[0m
+[0;32mI (2444227) MAIN_APP: Gia tri Lux: 579.17[0m
+[0;32mI (2444627) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":579.17} | Status: 201[0m
+[0;32mI (2454727) MAIN_APP: Gia tri Lux: 588.33[0m
+[0;32mI (2455167) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":588.33} | Status: 201[0m
+[0;32mI (2465267) MAIN_APP: Gia tri Lux: 580.00[0m
+[0;32mI (2465657) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":580.00} | Status: 201[0m
+[0;32mI (2475757) MAIN_APP: Gia tri Lux: 577.50[0m
+[0;32mI (2475877) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":577.50} | Status: 201[0m
+[0;32mI (2485977) MAIN_APP: Gia tri Lux: 584.17[0m
+[0;32mI (2486127) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":584.17} | Status: 201[0m
+[0;32mI (2496227) MAIN_APP: Gia tri Lux: 581.67[0m
+[0;32mI (2496407) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":581.67} | Status: 201[0m
+[0;32mI (2506507) MAIN_APP: Gia tri Lux: 585.00[0m
+[0;32mI (2506877) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":585.00} | Status: 201[0m
+[0;32mI (2516977) MAIN_APP: Gia tri Lux: 580.00[0m
+[0;32mI (2517377) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":580.00} | Status: 201[0m
+[0;32mI (2527477) MAIN_APP: Gia tri Lux: 580.83[0m
+[0;32mI (2527627) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":580.83} | Status: 201[0m
+[0;32mI (2537727) MAIN_APP: Gia tri Lux: 579.17[0m
+[0;32mI (2537877) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":579.17} | Status: 201[0m
+[0;32mI (2547977) MAIN_APP: Gia tri Lux: 575.00[0m
+[0;32mI (2548137) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":575.00} | Status: 201[0m
+[0;32mI (2558237) MAIN_APP: Gia tri Lux: 580.83[0m
+[0;32mI (2558377) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":580.83} | Status: 201[0m
+[0;32mI (2568477) MAIN_APP: Gia tri Lux: 580.00[0m
+[0;32mI (2568877) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":580.00} | Status: 201[0m
+[0;32mI (2578977) MAIN_APP: Gia tri Lux: 585.00[0m
+[0;32mI (2579157) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":585.00} | Status: 201[0m
+[0;32mI (2589257) MAIN_APP: Gia tri Lux: 579.17[0m
+[0;32mI (2589667) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":579.17} | Status: 201[0m
+[0;32mI (2599767) MAIN_APP: Gia tri Lux: 584.17[0m
+[0;32mI (2600137) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":584.17} | Status: 201[0m
+[0;32mI (2610237) MAIN_APP: Gia tri Lux: 580.83[0m
+[0;32mI (2610647) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":580.83} | Status: 201[0m
+[0;32mI (2620747) MAIN_APP: Gia tri Lux: 580.83[0m
+[0;32mI (2620877) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":580.83} | Status: 201[0m
+[0;32mI (2630977) MAIN_APP: Gia tri Lux: 578.33[0m
+[0;32mI (2631417) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":578.33} | Status: 201[0m
+[0;32mI (2641517) MAIN_APP: Gia tri Lux: 581.67[0m
+[0;32mI (2641627) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":581.67} | Status: 201[0m
+[0;32mI (2651727) MAIN_APP: Gia tri Lux: 579.17[0m
+[0;32mI (2652137) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":579.17} | Status: 201[0m
+[0;32mI (2662237) MAIN_APP: Gia tri Lux: 577.50[0m
+[0;32mI (2662377) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":577.50} | Status: 201[0m
+[0;32mI (2672477) MAIN_APP: Gia tri Lux: 578.33[0m
+[0;32mI (2672677) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":578.33} | Status: 201[0m
+[0;32mI (2682777) MAIN_APP: Gia tri Lux: 581.67[0m
+[0;32mI (2683137) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":581.67} | Status: 201[0m
+[0;32mI (2693237) MAIN_APP: Gia tri Lux: 580.83[0m
+[0;32mI (2693627) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":580.83} | Status: 201[0m
+[0;32mI (2703737) MAIN_APP: Gia tri Lux: 582.50[0m
+[0;32mI (2704147) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":582.50} | Status: 201[0m
+[0;32mI (2714247) MAIN_APP: Gia tri Lux: 580.83[0m
+[0;32mI (2714397) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":580.83} | Status: 201[0m
+[0;32mI (2724497) MAIN_APP: Gia tri Lux: 580.00[0m
+[0;32mI (2724627) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":580.00} | Status: 201[0m
+[0;32mI (2734727) MAIN_APP: Gia tri Lux: 581.67[0m
+[0;32mI (2734877) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":581.67} | Status: 201[0m
+[0;32mI (2744977) MAIN_APP: Gia tri Lux: 581.67[0m
+[0;32mI (2745377) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":581.67} | Status: 201[0m
+[0;32mI (2755477) MAIN_APP: Gia tri Lux: 575.83[0m
+[0;32mI (2755627) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":575.83} | Status: 201[0m
+[0;32mI (2765727) MAIN_APP: Gia tri Lux: 581.67[0m
+[0;32mI (2766137) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":581.67} | Status: 201[0m
+[0;32mI (2776237) MAIN_APP: Gia tri Lux: 579.17[0m
+[0;32mI (2776377) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":579.17} | Status: 201[0m
+[0;32mI (2786477) MAIN_APP: Gia tri Lux: 580.83[0m
+[0;32mI (2786887) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":580.83} | Status: 201[0m
+[0;32mI (2796987) MAIN_APP: Gia tri Lux: 581.67[0m
+[0;32mI (2797127) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":581.67} | Status: 201[0m
+[0;32mI (2807227) MAIN_APP: Gia tri Lux: 579.17[0m
+[0;32mI (2807397) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":579.17} | Status: 201[0m
+[0;32mI (2817497) MAIN_APP: Gia tri Lux: 584.17[0m
+[0;32mI (2817627) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":584.17} | Status: 201[0m
+[0;32mI (2827727) MAIN_APP: Gia tri Lux: 581.67[0m
+[0;32mI (2828137) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":581.67} | Status: 201[0m
+[0;32mI (2838237) MAIN_APP: Gia tri Lux: 581.67[0m
+[0;32mI (2838627) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":581.67} | Status: 201[0m
+[0;32mI (2848727) MAIN_APP: Gia tri Lux: 579.17[0m
+[0;32mI (2849137) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":579.17} | Status: 201[0m
+[0;32mI (2859237) MAIN_APP: Gia tri Lux: 585.00[0m
+[0;32mI (2859387) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":585.00} | Status: 201[0m
+[0;32mI (2869487) MAIN_APP: Gia tri Lux: 585.00[0m
+[0;32mI (2869877) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":585.00} | Status: 201[0m
+[0;32mI (2879977) MAIN_APP: Gia tri Lux: 580.00[0m
+[0;32mI (2880127) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":580.00} | Status: 201[0m
+[0;32mI (2890227) MAIN_APP: Gia tri Lux: 585.00[0m
+[0;32mI (2890377) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":585.00} | Status: 201[0m
+[0;32mI (2900477) MAIN_APP: Gia tri Lux: 580.00[0m
+[0;32mI (2900627) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":580.00} | Status: 201[0m
+[0;32mI (2910727) MAIN_APP: Gia tri Lux: 580.83[0m
+[0;32mI (2910887) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":580.83} | Status: 201[0m
+[0;32mI (2920987) MAIN_APP: Gia tri Lux: 582.50[0m
+[0;32mI (2921127) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":582.50} | Status: 201[0m
+[0;32mI (2931227) MAIN_APP: Gia tri Lux: 577.50[0m
+[0;32mI (2931637) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":577.50} | Status: 201[0m
+[0;32mI (2941737) MAIN_APP: Gia tri Lux: 584.17[0m
+[0;32mI (2942127) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":584.17} | Status: 201[0m
+[0;32mI (2952227) MAIN_APP: Gia tri Lux: 580.00[0m
+[0;32mI (2952637) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":580.00} | Status: 201[0m
+[0;32mI (2962737) MAIN_APP: Gia tri Lux: 575.83[0m
+[0;32mI (2962897) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":575.83} | Status: 201[0m
+[0;32mI (2972997) MAIN_APP: Gia tri Lux: 573.33[0m
+[0;32mI (2973137) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":573.33} | Status: 201[0m
+[0;32mI (2983237) MAIN_APP: Gia tri Lux: 578.33[0m
+[0;32mI (2983637) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":578.33} | Status: 201[0m
+[0;32mI (2993737) MAIN_APP: Gia tri Lux: 589.17[0m
+[0;32mI (2994137) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":589.17} | Status: 201[0m
+[0;32mI (3004237) MAIN_APP: Gia tri Lux: 583.33[0m
+[0;32mI (3004387) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":583.33} | Status: 201[0m
+[0;32mI (3014487) MAIN_APP: Gia tri Lux: 581.67[0m
+[0;32mI (3014627) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":581.67} | Status: 201[0m
+[0;32mI (3024727) MAIN_APP: Gia tri Lux: 585.00[0m
+[0;32mI (3024877) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":585.00} | Status: 201[0m
+[0;32mI (3034977) MAIN_APP: Gia tri Lux: 590.00[0m
+[0;32mI (3035137) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":590.00} | Status: 201[0m
+[0;32mI (3045237) MAIN_APP: Gia tri Lux: 580.00[0m
+[0;32mI (3045377) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":580.00} | Status: 201[0m
+[0;32mI (3055487) MAIN_APP: Gia tri Lux: 580.83[0m
+[0;32mI (3055627) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":580.83} | Status: 201[0m
+[0;32mI (3065727) MAIN_APP: Gia tri Lux: 582.50[0m
+[0;32mI (3065877) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":582.50} | Status: 201[0m
+[0;32mI (3075977) MAIN_APP: Gia tri Lux: 580.83[0m
+[0;32mI (3076377) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":580.83} | Status: 201[0m
+[0;32mI (3086477) MAIN_APP: Gia tri Lux: 577.50[0m
+[0;32mI (3086637) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":577.50} | Status: 201[0m
+[0;32mI (3096737) MAIN_APP: Gia tri Lux: 582.50[0m
+[0;32mI (3097127) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":582.50} | Status: 201[0m
+[0;32mI (3107237) MAIN_APP: Gia tri Lux: 580.83[0m
+[0;32mI (3107407) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":580.83} | Status: 201[0m
+[0;32mI (3117507) MAIN_APP: Gia tri Lux: 581.67[0m
+[0;32mI (3117637) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":581.67} | Status: 201[0m
+[0;32mI (3127737) MAIN_APP: Gia tri Lux: 582.50[0m
+[0;32mI (3128127) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":582.50} | Status: 201[0m
+[0;32mI (3138227) MAIN_APP: Gia tri Lux: 580.00[0m
+[0;32mI (3138677) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":580.00} | Status: 201[0m
+[0;32mI (3148777) MAIN_APP: Gia tri Lux: 579.17[0m
+[0;32mI (3149137) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":579.17} | Status: 201[0m
+[0;32mI (3159237) MAIN_APP: Gia tri Lux: 581.67[0m
+[0;32mI (3159627) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":581.67} | Status: 201[0m
+[0;32mI (3169727) MAIN_APP: Gia tri Lux: 580.83[0m
+[0;32mI (3169927) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":580.83} | Status: 201[0m
+[0;32mI (3180027) MAIN_APP: Gia tri Lux: 580.00[0m
+[0;32mI (3180377) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":580.00} | Status: 201[0m
+[0;32mI (3190477) MAIN_APP: Gia tri Lux: 582.50[0m
+[0;32mI (3190887) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":582.50} | Status: 201[0m
+[0;32mI (3200987) MAIN_APP: Gia tri Lux: 581.67[0m
+[0;32mI (3201387) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":581.67} | Status: 201[0m
+[0;32mI (3211487) MAIN_APP: Gia tri Lux: 581.67[0m
+[0;32mI (3211887) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":581.67} | Status: 201[0m
+[0;32mI (3221987) MAIN_APP: Gia tri Lux: 583.33[0m
+[0;32mI (3222397) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":583.33} | Status: 201[0m
+[0;32mI (3232497) MAIN_APP: Gia tri Lux: 588.33[0m
+[0;32mI (3232637) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":588.33} | Status: 201[0m
+[0;32mI (3242737) MAIN_APP: Gia tri Lux: 582.50[0m
+[0;32mI (3243137) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":582.50} | Status: 201[0m
+[0;32mI (3253237) MAIN_APP: Gia tri Lux: 582.50[0m
+[0;32mI (3253637) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":582.50} | Status: 201[0m
+[0;32mI (3263737) MAIN_APP: Gia tri Lux: 582.50[0m
+[0;32mI (3264127) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":582.50} | Status: 201[0m
+[0;32mI (3274237) MAIN_APP: Gia tri Lux: 585.00[0m
+[0;32mI (3274647) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":585.00} | Status: 201[0m
+[0;32mI (3284747) MAIN_APP: Gia tri Lux: 583.33[0m
+[0;32mI (3284877) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":583.33} | Status: 201[0m
+[0;32mI (3294987) MAIN_APP: Gia tri Lux: 589.17[0m
+[0;32mI (3295127) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":589.17} | Status: 201[0m
+[0;32mI (3305227) MAIN_APP: Gia tri Lux: 585.00[0m
+[0;32mI (3305627) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":585.00} | Status: 201[0m
+[0;32mI (3315727) MAIN_APP: Gia tri Lux: 578.33[0m
+[0;32mI (3316127) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":578.33} | Status: 201[0m
+[0;32mI (3326227) MAIN_APP: Gia tri Lux: 580.83[0m
+[0;32mI (3326667) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":580.83} | Status: 201[0m
+[0;32mI (3336767) MAIN_APP: Gia tri Lux: 580.83[0m
+[0;32mI (3337137) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":580.83} | Status: 201[0m
+[0;32mI (3347237) MAIN_APP: Gia tri Lux: 580.83[0m
+[0;32mI (3347397) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":580.83} | Status: 201[0m
+[0;32mI (3357497) MAIN_APP: Gia tri Lux: 585.00[0m
+[0;32mI (3357897) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":585.00} | Status: 201[0m
+[0;32mI (3367997) MAIN_APP: Gia tri Lux: 580.83[0m
+[0;32mI (3368387) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":580.83} | Status: 201[0m
+[0;32mI (3378497) MAIN_APP: Gia tri Lux: 585.00[0m
+[0;32mI (3378907) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":585.00} | Status: 201[0m
+[0;32mI (3389007) MAIN_APP: Gia tri Lux: 583.33[0m
+[0;32mI (3389387) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":583.33} | Status: 201[0m
+[0;32mI (3399487) MAIN_APP: Gia tri Lux: 580.83[0m
+[0;32mI (3399647) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":580.83} | Status: 201[0m
+[0;32mI (3409747) MAIN_APP: Gia tri Lux: 588.33[0m
+[0;32mI (3410147) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":588.33} | Status: 201[0m
+[0;32mI (3420247) MAIN_APP: Gia tri Lux: 579.17[0m
+[0;32mI (3420637) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":579.17} | Status: 201[0m
+[0;32mI (3430747) MAIN_APP: Gia tri Lux: 576.67[0m
+[0;32mI (3431137) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":576.67} | Status: 201[0m
+[0;32mI (3441237) MAIN_APP: Gia tri Lux: 580.00[0m
+[0;32mI (3441387) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":580.00} | Status: 201[0m
+[0;32mI (3451487) MAIN_APP: Gia tri Lux: 588.33[0m
+[0;32mI (3451897) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":588.33} | Status: 201[0m
+[0;32mI (3461997) MAIN_APP: Gia tri Lux: 581.67[0m
+[0;32mI (3462137) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":581.67} | Status: 201[0m
+[0;32mI (3472237) MAIN_APP: Gia tri Lux: 583.33[0m
+[0;32mI (3472387) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":583.33} | Status: 201[0m
+[0;32mI (3482487) MAIN_APP: Gia tri Lux: 590.00[0m
+[0;32mI (3482647) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":590.00} | Status: 201[0m
+[0;32mI (3492747) MAIN_APP: Gia tri Lux: 589.17[0m
+[0;32mI (3492887) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":589.17} | Status: 201[0m
+[0;32mI (3502987) MAIN_APP: Gia tri Lux: 623.33[0m
+[0;32mI (3503397) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":623.33} | Status: 201[0m
+[0;32mI (3513497) MAIN_APP: Gia tri Lux: 641.67[0m
+[0;32mI (3513647) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":641.67} | Status: 201[0m
+[0;32mI (3523747) MAIN_APP: Gia tri Lux: 644.17[0m
+[0;32mI (3524147) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":644.17} | Status: 201[0m
+[0;32mI (3534247) MAIN_APP: Gia tri Lux: 643.33[0m
+[0;32mI (3534387) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":643.33} | Status: 201[0m
+[0;32mI (3544487) MAIN_APP: Gia tri Lux: 643.33[0m
+[0;32mI (3544677) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":643.33} | Status: 201[0m
+[0;32mI (3554777) MAIN_APP: Gia tri Lux: 638.33[0m
+[0;32mI (3555147) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":638.33} | Status: 201[0m
+[0;32mI (3565247) MAIN_APP: Gia tri Lux: 635.83[0m
+[0;32mI (3565637) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":635.83} | Status: 201[0m
+[0;32mI (3575737) MAIN_APP: Gia tri Lux: 639.17[0m
+[0;32mI (3575887) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":639.17} | Status: 201[0m
+[0;32mI (3585987) MAIN_APP: Gia tri Lux: 633.33[0m
+[0;32mI (3586157) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":633.33} | Status: 201[0m
+[0;32mI (3596257) MAIN_APP: Gia tri Lux: 614.17[0m
+[0;32mI (3596657) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":614.17} | Status: 201[0m
+[0;32mI (3606757) MAIN_APP: Gia tri Lux: 612.50[0m
+[0;32mI (3606897) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":612.50} | Status: 201[0m
+[0;32mI (3616997) MAIN_APP: Gia tri Lux: 614.17[0m
+[0;32mI (3617387) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":614.17} | Status: 201[0m
+[0;32mI (3627487) MAIN_APP: Gia tri Lux: 603.33[0m
+[0;32mI (3627647) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":603.33} | Status: 201[0m
+[0;32mI (3637747) MAIN_APP: Gia tri Lux: 598.33[0m
+[0;32mI (3637887) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":598.33} | Status: 201[0m
+[0;32mI (3647997) MAIN_APP: Gia tri Lux: 601.67[0m
+[0;32mI (3648147) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":601.67} | Status: 201[0m
+[0;32mI (3658247) MAIN_APP: Gia tri Lux: 600.83[0m
+[0;32mI (3658647) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":600.83} | Status: 201[0m
+[0;32mI (3668747) MAIN_APP: Gia tri Lux: 599.17[0m
+[0;32mI (3669157) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":599.17} | Status: 201[0m
+[0;32mI (3679257) MAIN_APP: Gia tri Lux: 596.67[0m
+[0;32mI (3679387) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":596.67} | Status: 201[0m
+[0;32mI (3689487) MAIN_APP: Gia tri Lux: 599.17[0m
+[0;32mI (3689647) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":599.17} | Status: 201[0m
+[0;32mI (3699747) MAIN_APP: Gia tri Lux: 596.67[0m
+[0;32mI (3700147) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":596.67} | Status: 201[0m
+[0;32mI (3710247) MAIN_APP: Gia tri Lux: 597.50[0m
+[0;32mI (3710387) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":597.50} | Status: 201[0m
+[0;32mI (3720487) MAIN_APP: Gia tri Lux: 600.83[0m
+[0;32mI (3720637) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":600.83} | Status: 201[0m
+[0;32mI (3730737) MAIN_APP: Gia tri Lux: 597.50[0m
+[0;32mI (3730897) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":597.50} | Status: 201[0m
+[0;32mI (3740997) MAIN_APP: Gia tri Lux: 595.83[0m
+[0;32mI (3741387) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":595.83} | Status: 201[0m
+[0;32mI (3751487) MAIN_APP: Gia tri Lux: 601.67[0m
+[0;32mI (3751897) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":601.67} | Status: 201[0m
+[0;32mI (3761997) MAIN_APP: Gia tri Lux: 597.50[0m
+[0;32mI (3762147) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":597.50} | Status: 201[0m
+[0;32mI (3772247) MAIN_APP: Gia tri Lux: 597.50[0m
+[0;32mI (3772657) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":597.50} | Status: 201[0m
+[0;32mI (3782757) MAIN_APP: Gia tri Lux: 581.67[0m
+[0;32mI (3783137) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":581.67} | Status: 201[0m
+[0;32mI (3793237) MAIN_APP: Gia tri Lux: 602.50[0m
+[0;32mI (3793387) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":602.50} | Status: 201[0m
+[0;32mI (3803487) MAIN_APP: Gia tri Lux: 595.83[0m
+[0;32mI (3803897) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":595.83} | Status: 201[0m
+[0;32mI (3813997) MAIN_APP: Gia tri Lux: 591.67[0m
+[0;32mI (3814147) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":591.67} | Status: 201[0m
+[0;32mI (3824247) MAIN_APP: Gia tri Lux: 596.67[0m
+[0;32mI (3824647) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":596.67} | Status: 201[0m
+[0;32mI (3834747) MAIN_APP: Gia tri Lux: 595.00[0m
+[0;32mI (3835137) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":595.00} | Status: 201[0m
+[0;32mI (3845237) MAIN_APP: Gia tri Lux: 595.83[0m
+[0;32mI (3845637) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":595.83} | Status: 201[0m
+[0;32mI (3855737) MAIN_APP: Gia tri Lux: 600.00[0m
+[0;32mI (3856137) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":600.00} | Status: 201[0m
+[0;32mI (3866237) MAIN_APP: Gia tri Lux: 596.67[0m
+[0;32mI (3866417) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":596.67} | Status: 201[0m
+[0;32mI (3876517) MAIN_APP: Gia tri Lux: 585.00[0m
+[0;32mI (3876897) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":585.00} | Status: 201[0m
+[0;32mI (3886997) MAIN_APP: Gia tri Lux: 585.00[0m
+[0;32mI (3887147) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":585.00} | Status: 201[0m
+[0;32mI (3897247) MAIN_APP: Gia tri Lux: 590.00[0m
+[0;32mI (3897387) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":590.00} | Status: 201[0m
+[0;32mI (3907487) MAIN_APP: Gia tri Lux: 589.17[0m
+[0;32mI (3907647) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":589.17} | Status: 201[0m
+[0;32mI (3917747) MAIN_APP: Gia tri Lux: 594.17[0m
+[0;32mI (3917887) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":594.17} | Status: 201[0m
+[0;32mI (3927987) MAIN_APP: Gia tri Lux: 581.67[0m
+[0;32mI (3928387) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":581.67} | Status: 201[0m
+[0;32mI (3938487) MAIN_APP: Gia tri Lux: 598.33[0m
+[0;32mI (3938637) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":598.33} | Status: 201[0m
+[0;32mI (3948747) MAIN_APP: Gia tri Lux: 595.83[0m
+[0;32mI (3948887) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":595.83} | Status: 201[0m
+[0;32mI (3958987) MAIN_APP: Gia tri Lux: 593.33[0m
+[0;32mI (3959397) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":593.33} | Status: 201[0m
+[0;32mI (3969497) MAIN_APP: Gia tri Lux: 595.83[0m
+[0;32mI (3969647) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":595.83} | Status: 201[0m
+[0;32mI (3979747) MAIN_APP: Gia tri Lux: 595.83[0m
+[0;32mI (3979887) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":595.83} | Status: 201[0m
+[0;32mI (3989987) MAIN_APP: Gia tri Lux: 595.00[0m
+[0;32mI (3990387) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":595.00} | Status: 201[0m
+[0;32mI (4000487) MAIN_APP: Gia tri Lux: 596.67[0m
+[0;32mI (4000647) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":596.67} | Status: 201[0m
+[0;32mI (4010747) MAIN_APP: Gia tri Lux: 595.83[0m
+[0;32mI (4011137) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":595.83} | Status: 201[0m
+[0;32mI (4021237) MAIN_APP: Gia tri Lux: 604.17[0m
+[0;32mI (4021647) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":604.17} | Status: 201[0m
+[0;32mI (4031747) MAIN_APP: Gia tri Lux: 597.50[0m
+[0;32mI (4031907) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":597.50} | Status: 201[0m
+[0;32mI (4042007) MAIN_APP: Gia tri Lux: 594.17[0m
+[0;32mI (4042417) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":594.17} | Status: 201[0m
+[0;32mI (4052517) MAIN_APP: Gia tri Lux: 588.33[0m
+[0;32mI (4052897) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":588.33} | Status: 201[0m
+[0;32mI (4062997) MAIN_APP: Gia tri Lux: 607.50[0m
+[0;32mI (4063137) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":607.50} | Status: 201[0m
+[0;32mI (4073237) MAIN_APP: Gia tri Lux: 600.00[0m
+[0;32mI (4073647) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":600.00} | Status: 201[0m
+[0;32mI (4083747) MAIN_APP: Gia tri Lux: 594.17[0m
+[0;32mI (4084147) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":594.17} | Status: 201[0m
+[0;32mI (4094247) MAIN_APP: Gia tri Lux: 604.17[0m
+[0;32mI (4094387) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":604.17} | Status: 201[0m
+[0;32mI (4104487) MAIN_APP: Gia tri Lux: 597.50[0m
+[0;32mI (4104637) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":597.50} | Status: 201[0m
+[0;32mI (4114737) MAIN_APP: Gia tri Lux: 602.50[0m
+[0;32mI (4114887) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":602.50} | Status: 201[0m
+[0;32mI (4124987) MAIN_APP: Gia tri Lux: 602.50[0m
+[0;32mI (4125397) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":602.50} | Status: 201[0m
+[0;32mI (4135497) MAIN_APP: Gia tri Lux: 602.50[0m
+[0;32mI (4135637) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":602.50} | Status: 201[0m
+[0;32mI (4145737) MAIN_APP: Gia tri Lux: 600.83[0m
+[0;32mI (4146137) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":600.83} | Status: 201[0m
+[0;32mI (4156237) MAIN_APP: Gia tri Lux: 606.67[0m
+[0;32mI (4156397) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":606.67} | Status: 201[0m
+[0;32mI (4166497) MAIN_APP: Gia tri Lux: 603.33[0m
+[0;32mI (4166917) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":603.33} | Status: 201[0m
+[0;32mI (4177017) MAIN_APP: Gia tri Lux: 602.50[0m
+[0;32mI (4177397) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":602.50} | Status: 201[0m
+[0;32mI (4187497) MAIN_APP: Gia tri Lux: 604.17[0m
+[0;32mI (4187647) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":604.17} | Status: 201[0m
+[0;32mI (4197747) MAIN_APP: Gia tri Lux: 603.33[0m
+[0;32mI (4197887) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":603.33} | Status: 201[0m
+[0;32mI (4207987) MAIN_APP: Gia tri Lux: 606.67[0m
+[0;32mI (4208147) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":606.67} | Status: 201[0m
+[0;32mI (4218247) MAIN_APP: Gia tri Lux: 590.00[0m
+[0;32mI (4218387) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":590.00} | Status: 201[0m
+[0;32mI (4228487) MAIN_APP: Gia tri Lux: 603.33[0m
+[0;32mI (4228887) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":603.33} | Status: 201[0m
+[0;32mI (4238987) MAIN_APP: Gia tri Lux: 606.67[0m
+[0;32mI (4239147) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":606.67} | Status: 201[0m
+[0;32mI (4249247) MAIN_APP: Gia tri Lux: 207.50[0m
+[0;32mI (4249677) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":207.50} | Status: 201[0m
+[0;32mI (4259777) MAIN_APP: Gia tri Lux: 310.00[0m
+[0;32mI (4260137) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":310.00} | Status: 201[0m
+[0;32mI (4270237) MAIN_APP: Gia tri Lux: 335.00[0m
+[0;32mI (4270637) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":335.00} | Status: 201[0m
+[0;32mI (4280737) MAIN_APP: Gia tri Lux: 330.83[0m
+[0;32mI (4281137) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":330.83} | Status: 201[0m
+[0;32mI (4291237) MAIN_APP: Gia tri Lux: 330.83[0m
+[0;32mI (4291397) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":330.83} | Status: 201[0m
+[0;32mI (4301507) MAIN_APP: Gia tri Lux: 333.33[0m
+[0;32mI (4301647) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":333.33} | Status: 201[0m
+[0;32mI (4311747) MAIN_APP: Gia tri Lux: 341.67[0m
+[0;32mI (4311887) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":341.67} | Status: 201[0m
+[0;32mI (4321987) MAIN_APP: Gia tri Lux: 336.67[0m
+[0;32mI (4322147) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":336.67} | Status: 201[0m
+[0;32mI (4332247) MAIN_APP: Gia tri Lux: 335.83[0m
+[0;32mI (4332637) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":335.83} | Status: 201[0m
+[0;32mI (4342737) MAIN_APP: Gia tri Lux: 341.67[0m
+[0;32mI (4343167) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":341.67} | Status: 201[0m
+[0;32mI (4353267) MAIN_APP: Gia tri Lux: 338.33[0m
+[0;32mI (4353397) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":338.33} | Status: 201[0m
+[0;32mI (4363497) MAIN_APP: Gia tri Lux: 336.67[0m
+[0;32mI (4363637) MAIN_APP: Gui thanh cong: {"device_id":"5c013b9cced8","lux":336.67} | Status: 201[0m
+[0;32mI (4373737) MAIN_APP: Gia tri Lux: 341.67[0m
+[0;32mI (4374137) MAIN_APP: Gui thanh cong: {"device_id":"5c013b

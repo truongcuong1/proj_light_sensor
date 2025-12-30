@@ -1,23 +1,50 @@
 from sqlalchemy.orm import Session
-# Session là kết nối đến cơ sở dữ liệu, dùng để thêm, truy vấn, xóa, commit dữ liệu.
 from . import models, schemas
-# Import các module nội bộ của project
+from datetime import datetime
 
-# hàm tạo bản ghi mới trong bảng SensorReading.
+# --- 1. HÀM TẠO BẢN GHI MỚI ---
 def create_reading(db: Session, reading: schemas.SensorIn):
-    # db: Session → kết nối database để thao tác.
-    # reading: schemas.SensorIn → dữ liệu đầu vào được xác thực qua Pydantic schema SensorIn.
-    db_item = models.SensorReading(
-        # Tạo object ORM mới db_item thuộc bảng SensorReading
-        # Lúc này db_item chưa được lưu vào database.
-        device_id=reading.device_id, # gán device ID từ request
-        lux=reading.lux #gán giá trị lux từ request.
+    # Tạo object ORM mới (chưa lưu vào DB)
+    db_reading = models.SensorReading(
+        device_id=reading.device_id,
+        lux=reading.lux
     )
-    db.add(db_item) #Thêm object db_item vào session của SQLAlchemy.chỉ năm bộ nhớ tạm
-    db.commit() #ghi dữ liệu từ session vào cơ sở dữ liệu thực.
-    db.refresh(db_item) #Refresh object từ database để cập nhật các giá trị tự động sinh
-    return db_item
+    # Thêm vào session (bộ nhớ tạm)
+    db.add(db_reading)
+    # Commit để lưu chính thức vào MySQL
+    db.commit()
+    # Refresh để lấy lại ID và Timestamp tự sinh từ MySQL
+    db.refresh(db_reading)
+    return db_reading
 
-# Hàm lấy các bản ghi gần đây nhất từ bảng SensorReading
+# --- 2. HÀM LẤY DỮ LIỆU CHO BIỂU ĐỒ (MỚI NHẤT) ---
 def get_recent(db: Session, limit: int = 100):
-    return db.query(models.SensorReading).order_by(models.SensorReading.timestamp.desc()).limit(limit).all()
+    return db.query(models.SensorReading)\
+             .order_by(models.SensorReading.timestamp.desc())\
+             .limit(limit)\
+             .all()
+
+# --- 3. HÀM LẤY DỮ LIỆU PHÂN TRANG (CHO BẢNG) ---
+def get_readings_paginated(db: Session, skip: int = 0, limit: int = 20):
+    # .offset(skip): Bỏ qua 'skip' dòng đầu
+    # .limit(limit): Chỉ lấy 'limit' dòng
+    # .order_by(...desc()): Sắp xếp mới nhất lên đầu
+    data = db.query(models.SensorReading)\
+             .order_by(models.SensorReading.id.desc())\
+             .offset(skip)\
+             .limit(limit)\
+             .all()
+    
+    # Đếm tổng số bản ghi (để tính số trang)
+    total = db.query(models.SensorReading).count()
+    
+    # Trả về cả dữ liệu và tổng số dòng
+    return data, total
+
+# --- 4. HÀM LẤY DỮ LIỆU THEO NGÀY (CHO CSV) ---
+def get_readings_by_date_range(db: Session, start_date: datetime, end_date: datetime):
+    return db.query(models.SensorReading)\
+             .filter(models.SensorReading.timestamp >= start_date, 
+                     models.SensorReading.timestamp <= end_date)\
+             .order_by(models.SensorReading.timestamp.desc())\
+             .all()

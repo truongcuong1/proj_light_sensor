@@ -1,7 +1,7 @@
 {
     "version":            "1.2",
     "project_name":       "light_wifi_sensor",
-    "project_version":    "1",
+    "project_version":    "89d52fe-dirty",
     "project_path":       "C:/Users/DELL/new_project_light_wifi/firmware_flash",
     "idf_path":           "C:/Espressif/frameworks/esp-idf-v5.5.1/v5.5.1/esp-idf",
     "build_dir":          "C:/Users/DELL/new_project_light_wifi/firmware_flash/build",
@@ -11,7 +11,7 @@
     "app_elf":            "light_wifi_sensor.elf",
     "app_bin":            "light_wifi_sensor.bin",
     "build_type":         "flash_app",
-    "git_revision":       "HEAD-HASH-NOTFOUND",
+    "git_revision":       "v5.5.1",
     "target":             "esp32",
     "rev":                "0",
     "min_rev":            "0",

@@ -1,132 +1,247 @@
 <!DOCTYPE html>
-<html>
+<html lang="vi">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>IoT Light Monitor</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hệ Thống Giám Sát IoT</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f4f7f6; margin: 0; padding: 20px; }
-        .container { max-width: 1000px; margin: 0 auto; background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        h1 { text-align: center; color: #333; }
-        .chart-container { position: relative; height: 400px; width: 100%; margin-bottom: 30px; }
-        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f4f7f6; padding: 20px; }
+        .container { max-width: 1000px; margin: 0 auto; background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        h1 { text-align: center; color: #333; margin-bottom: 20px; }
+
+        /* Style cho phần điều khiển CSV */
+        .control-panel { background: #e8f4ff; padding: 15px; border-radius: 8px; margin-bottom: 20px; display: flex; gap: 10px; align-items: center; flex-wrap: wrap; border: 1px solid #b6d4fe; }
+        .control-panel label { font-weight: bold; color: #004085; }
+        input[type="date"] { padding: 8px; border: 1px solid #ccc; border-radius: 4px; }
+        .btn-export { background: #28a745; color: white; border: none; padding: 10px 20px; cursor: pointer; border-radius: 4px; font-weight: bold; transition: 0.3s;}
+        .btn-export:hover { background: #218838; }
+
+        /* Style cho Biểu đồ */
+        .chart-container { position: relative; height: 350px; width: 100%; margin-bottom: 30px; }
+
+        /* Style cho Bảng */
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
         th, td { padding: 12px; text-align: left; border-bottom: 1px solid #ddd; }
-        th { background-color: #007bff; color: white; }
-        tr:hover { background-color: #f1f1f1; }
-        .status { text-align: center; margin-bottom: 10px; color: #666; font-size: 0.9em; }
+        th { background-color: #007bff; color: white; position: sticky; top: 0; z-index: 10;}
+        tr:nth-child(even) { background-color: #f8f9fa; }
+        tr:hover { background-color: #e9ecef; }
+        
+        /* Hiệu ứng nháy vàng khi có dòng mới */
+        @keyframes highlight {
+            0% { background-color: #ffeb3b; } /* Màu vàng */
+            100% { background-color: transparent; }
+        }
+        .new-row { animation: highlight 3s ease-out; }
+
+        /* Loading Indicator */
+        .loading-trigger {
+            text-align: center; padding: 20px; color: #666; font-style: italic;
+            display: flex; justify-content: center; align-items: center; gap: 10px;
+        }
+        .spinner {
+            width: 20px; height: 20px; border: 3px solid #ccc; border-top: 3px solid #007bff;
+            border-radius: 50%; animation: spin 1s linear infinite;
+        }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        .end-message { text-align: center; padding: 20px; color: #28a745; font-weight: bold; display: none; }
+
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h1>💡 Giám Sát Ánh Sáng Thời Gian Thực</h1>
-    <div class="status">Dữ liệu tự cập nhật mỗi 5 giây</div>
+    <h1>💡 Dashboard Giám Sát Ánh Sáng</h1>
+
+    <div class="control-panel">
+        <label>📅 Xuất báo cáo:</label>
+        <input type="date" id="startDate">
+        <span>đến</span>
+        <input type="date" id="endDate">
+        <button class="btn-export" onclick="downloadCSV()">⬇️ Tải xuống CSV</button>
+    </div>
 
     <div class="chart-container">
         <canvas id="luxChart"></canvas>
     </div>
 
-    <h3>Lịch sử đo gần nhất</h3>
-    <table id="dataTable">
+    <hr>
+
+    <h3>📜 Nhật ký chi tiết (Tự động cập nhật)</h3>
+    <table>
         <thead>
             <tr>
                 <th>ID</th>
-                <th>Device</th>
-                <th>Lux (Cường độ)</th>
+                <th>Device ID</th>
+                <th>Cường độ (Lux)</th>
                 <th>Thời gian</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody id="tableBody">
             </tbody>
     </table>
+
+    <div id="loadingIndicator" class="loading-trigger">
+        <div class="spinner"></div> Đang tải thêm dữ liệu cũ...
+    </div>
+    <div id="endMessage" class="end-message">✅ Đã hiển thị hết dữ liệu!</div>
 </div>
 
 <script>
+    // --- PHẦN 1: CẤU HÌNH BIỂU ĐỒ ---
     let myChart = null;
-
-    // Khởi tạo biểu đồ rỗng
     function initChart() {
         const ctx = document.getElementById('luxChart').getContext('2d');
         myChart = new Chart(ctx, {
             type: 'line',
             data: {
-                labels: [], // Thời gian
+                labels: [],
                 datasets: [{
-                    label: 'Cường độ sáng (Lux)',
+                    label: 'Độ sáng (Lux)',
                     data: [],
                     borderColor: '#FF9800',
                     backgroundColor: 'rgba(255, 152, 0, 0.2)',
                     borderWidth: 2,
                     fill: true,
-                    tension: 0.4 // Làm mượt đường cong
+                    tension: 0.4,
+                    pointRadius: 3
                 }]
             },
             options: {
                 responsive: true,
                 maintainAspectRatio: false,
-                scales: {
-                    y: { beginAtZero: true }
-                },
-                animation: false // Tắt hiệu ứng load lại để đỡ giật
+                animation: false, // Tắt animation để biểu đồ chạy mượt realtime
+                scales: { y: { beginAtZero: true } },
+                interaction: { mode: 'index', intersect: false }
             }
         });
     }
 
-    // Hàm format ngày tháng cho đẹp
-    function formatDate(isoString) {
-        const d = new Date(isoString);
-        return d.toLocaleString('vi-VN');
+    // --- PHẦN 2: CÁC BIẾN & HÀM HỖ TRỢ ---
+    let currentPage = 1;
+    const limit = 20; 
+    let isLoading = false;
+    let isFull = false;
+
+    // Hàm tạo HTML cho 1 dòng bảng
+    function createRowHTML(item, isNew = false) {
+        // Nếu là dòng mới realtime thì thêm class 'new-row' để nó nháy màu
+        const rowClass = isNew ? 'new-row' : '';
+        return `<tr class="${rowClass}">
+            <td>${item.id}</td>
+            <td>${item.device_id}</td>
+            <td style="color:#d35400; font-weight:bold;">${item.lux.toFixed(2)}</td>
+            <td>${new Date(item.timestamp).toLocaleString('vi-VN')}</td>
+        </tr>`;
     }
 
-    // Hàm lấy dữ liệu và update giao diện
-    async function reloadData() {
+    // --- PHẦN 3: LAZY LOADING (Tải dữ liệu cũ khi cuộn xuống) ---
+    async function loadMoreData() {
+        if (isLoading || isFull) return;
+        isLoading = true;
+
         try {
-            // Gọi API lấy 50 điểm dữ liệu mới nhất
-            const response = await fetch('/api/readings?limit=20'); // Lấy 20 điểm vẽ cho đẹp
-            const data = await response.json(); 
-            // Data trả về đã được sort Cũ -> Mới từ API
+            // Gọi API lấy dữ liệu phân trang
+            const res = await fetch(`/api/readings?page=${currentPage}&limit=${limit}`);
+            const result = await res.json();
 
-            // 1. Update Biểu Đồ
-            const labels = data.map(item => {
-                const d = new Date(item.timestamp);
-                return d.toLocaleTimeString('vi-VN'); // Chỉ lấy giờ phút giây
+            // Nếu server trả về rỗng -> Hết dữ liệu
+            if (result.data.length === 0) {
+                isFull = true;
+                document.getElementById('loadingIndicator').style.display = 'none';
+                document.getElementById('endMessage').style.display = 'block';
+                return;
+            }
+
+            const tbody = document.getElementById('tableBody');
+            result.data.forEach(item => {
+                // CHÈN VÀO CUỐI BẢNG (Bottom) vì đây là dữ liệu cũ hơn
+                tbody.insertAdjacentHTML('beforeend', createRowHTML(item));
             });
-            const values = data.map(item => item.lux);
 
-            myChart.data.labels = labels;
-            myChart.data.datasets[0].data = values;
+            currentPage++; // Tăng số trang lên
+
+            // Nếu trang này ít hơn limit -> Chắc chắn là trang cuối rồi
+            if (result.data.length < limit) {
+                isFull = true;
+                document.getElementById('loadingIndicator').style.display = 'none';
+                document.getElementById('endMessage').style.display = 'block';
+            }
+
+        } catch (err) { console.error("Lỗi lazy load:", err); } 
+        finally { isLoading = false; }
+    }
+
+    // --- PHẦN 4: REALTIME UPDATE (Tự chèn dòng mới lên đầu) ---
+    async function updateRealtime() {
+        try {
+            // 1. Lấy dữ liệu cho Chart (20 điểm mới nhất)
+            // Lưu ý: API này trả về thứ tự [Cũ -> Mới] để vẽ biểu đồ từ trái qua phải
+            const response = await fetch('/api/readings/recent?limit=20');
+            const data = await response.json();
+            
+            // Cập nhật Biểu đồ
+            myChart.data.labels = data.map(item => new Date(item.timestamp).toLocaleTimeString());
+            myChart.data.datasets[0].data = data.map(item => item.lux);
             myChart.update();
 
-            // 2. Update Bảng (Đảo ngược lại để Mới nhất lên đầu)
-            const tbody = document.querySelector('#dataTable tbody');
-            tbody.innerHTML = ''; // Xóa cũ
-            
-            // Clone mảng data rồi đảo ngược để hiển thị bảng
-            [...data].reverse().forEach(row => {
-                const tr = document.createElement('tr');
-                tr.innerHTML = `
-                    <td>${row.id}</td>
-                    <td>${row.device_id}</td>
-                    <td style="font-weight:bold; color:#FF5722">${row.lux.toFixed(2)}</td>
-                    <td>${formatDate(row.timestamp)}</td>
-                `;
-                tbody.appendChild(tr);
-            });
+            // 2. Cập nhật Bảng (Chèn dòng mới nhất lên đầu)
+            const newItem = data[data.length - 1]; // Lấy phần tử cuối mảng (Mới nhất)
+            if (!newItem) return;
 
-        } catch (error) {
-            console.error("Lỗi tải dữ liệu:", error);
-        }
+            const tbody = document.getElementById('tableBody');
+            const firstRow = tbody.querySelector('tr');
+            
+            // Lấy ID của dòng đầu tiên hiện tại để so sánh
+            let currentTopID = 0;
+            if (firstRow) {
+                // Cột đầu tiên là ID
+                currentTopID = parseInt(firstRow.cells[0].innerText);
+            }
+
+            // Nếu ID mới lớn hơn ID đang đứng đầu -> Có dữ liệu mới!
+            if (newItem.id > currentTopID) {
+                console.log("⚡ Có dữ liệu mới! ID:", newItem.id);
+                // CHÈN VÀO ĐẦU BẢNG (Top)
+                tbody.insertAdjacentHTML('afterbegin', createRowHTML(newItem, true));
+            }
+
+        } catch (err) { console.error("Lỗi realtime:", err); }
     }
 
-    // Chạy lần đầu
-    initChart();
-    reloadData();
+    // --- PHẦN 5: INTERSECTION OBSERVER (Con mắt thần) ---
+    // Tự động gọi loadMoreData khi cuộn xuống thấy cái div loading
+    const observer = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+            loadMoreData();
+        }
+    }, { threshold: 0.5 });
 
-    // Lặp lại mỗi 5 giây
-    setInterval(reloadData, 5000);
+    observer.observe(document.getElementById('loadingIndicator'));
+
+    // --- PHẦN 6: XUẤT CSV ---
+    function downloadCSV() {
+        const start = document.getElementById('startDate').value;
+        const end = document.getElementById('endDate').value;
+        if (!start || !end) {
+            alert("Vui lòng chọn ngày bắt đầu và kết thúc!");
+            return;
+        }
+        window.location.href = `/api/export-csv?start=${start}&end=${end}`;
+    }
+
+    // --- KHỞI CHẠY ---
+    initChart();
+    
+    // Gọi updateRealtime ngay lập tức để lấy dữ liệu mới nhất hiển thị
+    updateRealtime(); 
+    
+    // Gọi loadMoreData để lấp đầy màn hình nếu trống
+    loadMoreData();
+
+    // Cài đặt lặp lại mỗi 5 giây
+    setInterval(updateRealtime, 5000);
 
 </script>
-
 </body>
 </html>
